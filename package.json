@@ -1,6 +1,6 @@
 {
   "name": "@sapslaj/pulumi-gitea",
-  "version": "",
+  "version": "0.7.0",
   "description": "A Pulumi provider dynamically bridged from gitea.",
   "repository": "https://github.com/sapslaj/pulumi-gitea",
   "main": "dist/index.js",
