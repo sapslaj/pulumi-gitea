@@ -108,24 +108,24 @@ export interface RepositoryActionsSecretState {
     /**
      * Date of 'actions_secret' creation.
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
      * Name of the repository.
      */
-    repository?: pulumi.Input<string>;
-    repositoryActionsSecretId?: pulumi.Input<string>;
+    repository?: pulumi.Input<string | undefined>;
+    repositoryActionsSecretId?: pulumi.Input<string | undefined>;
     /**
      * Owner of the repository.
      */
-    repositoryOwner?: pulumi.Input<string>;
+    repositoryOwner?: pulumi.Input<string | undefined>;
     /**
      * Name of the secret.
      */
-    secretName?: pulumi.Input<string>;
+    secretName?: pulumi.Input<string | undefined>;
     /**
      * Value of the secret.
      */
-    secretValue?: pulumi.Input<string>;
+    secretValue?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -136,7 +136,7 @@ export interface RepositoryActionsSecretArgs {
      * Name of the repository.
      */
     repository: pulumi.Input<string>;
-    repositoryActionsSecretId?: pulumi.Input<string>;
+    repositoryActionsSecretId?: pulumi.Input<string | undefined>;
     /**
      * Owner of the repository.
      */

@@ -38,7 +38,7 @@ export class Org extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * The display name of the organisation. Defaults to the value of `name`.
+     * The display name of the organisation. Defaults to the value of <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>.
      */
     declare public readonly fullName: pulumi.Output<string | undefined>;
     declare public readonly location: pulumi.Output<string | undefined>;
@@ -106,34 +106,34 @@ export class Org extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Org resources.
  */
 export interface OrgState {
-    avatarUrl?: pulumi.Input<string>;
+    avatarUrl?: pulumi.Input<string | undefined>;
     /**
      * A description of this organisation.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * The display name of the organisation. Defaults to the value of `name`.
+     * The display name of the organisation. Defaults to the value of <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>.
      */
-    fullName?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
+    fullName?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The name of the organisation without spaces.
      */
-    name?: pulumi.Input<string>;
-    orgId?: pulumi.Input<string>;
-    repoAdminChangeTeamAccess?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string | undefined>;
+    orgId?: pulumi.Input<string | undefined>;
+    repoAdminChangeTeamAccess?: pulumi.Input<boolean | undefined>;
     /**
      * List of all Repositories that are part of this organisation
      */
-    repos?: pulumi.Input<pulumi.Input<string>[]>;
+    repos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Flag is this organisation should be publicly visible or not.
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
     /**
      * A link to a website with more information about this organisation.
      */
-    website?: pulumi.Input<string>;
+    website?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -143,24 +143,24 @@ export interface OrgArgs {
     /**
      * A description of this organisation.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * The display name of the organisation. Defaults to the value of `name`.
+     * The display name of the organisation. Defaults to the value of <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>.
      */
-    fullName?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
+    fullName?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The name of the organisation without spaces.
      */
-    name?: pulumi.Input<string>;
-    orgId?: pulumi.Input<string>;
-    repoAdminChangeTeamAccess?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string | undefined>;
+    orgId?: pulumi.Input<string | undefined>;
+    repoAdminChangeTeamAccess?: pulumi.Input<boolean | undefined>;
     /**
      * Flag is this organisation should be publicly visible or not.
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
     /**
      * A link to a website with more information about this organisation.
      */
-    website?: pulumi.Input<string>;
+    website?: pulumi.Input<string | undefined>;
 }

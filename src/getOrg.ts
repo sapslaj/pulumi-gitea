@@ -44,5 +44,5 @@ export function getOrgOutput(args?: GetOrgOutputArgs, opts?: pulumi.InvokeOutput
  * A collection of arguments for invoking getOrg.
  */
 export interface GetOrgOutputArgs {
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

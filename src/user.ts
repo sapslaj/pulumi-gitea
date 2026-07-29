@@ -79,7 +79,7 @@ export class User extends pulumi.CustomResource {
     declare public readonly prohibitLogin: pulumi.Output<boolean | undefined>;
     declare public readonly restricted: pulumi.Output<boolean | undefined>;
     /**
-     * Flag to send a notification about the user creation to the defined `email`
+     * Flag to send a notification about the user creation to the defined <span pulumi-lang-nodejs="`email`" pulumi-lang-dotnet="`Email`" pulumi-lang-go="`email`" pulumi-lang-python="`email`" pulumi-lang-yaml="`email`" pulumi-lang-java="`email`" pulumi-lang-hcl="`email`">`email`</span>
      */
     declare public readonly sendNotification: pulumi.Output<boolean | undefined>;
     declare public readonly userId: pulumi.Output<string>;
@@ -88,7 +88,7 @@ export class User extends pulumi.CustomResource {
      */
     declare public readonly username: pulumi.Output<string>;
     /**
-     * Visibility of the user. Can be `public`, `limited` or `private`
+     * Visibility of the user. Can be <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`" pulumi-lang-hcl="`public`">`public`</span>, <span pulumi-lang-nodejs="`limited`" pulumi-lang-dotnet="`Limited`" pulumi-lang-go="`limited`" pulumi-lang-python="`limited`" pulumi-lang-yaml="`limited`" pulumi-lang-java="`limited`" pulumi-lang-hcl="`limited`">`limited`</span> or <span pulumi-lang-nodejs="`private`" pulumi-lang-dotnet="`Private`" pulumi-lang-go="`private`" pulumi-lang-python="`private`" pulumi-lang-yaml="`private`" pulumi-lang-java="`private`" pulumi-lang-hcl="`private`">`private`</span>
      */
     declare public readonly visibility: pulumi.Output<string | undefined>;
 
@@ -174,62 +174,62 @@ export interface UserState {
     /**
      * Flag if this user should be active or not
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Flag if this user should be an administrator or not
      */
-    admin?: pulumi.Input<boolean>;
-    allowCreateOrganization?: pulumi.Input<boolean>;
-    allowGitHook?: pulumi.Input<boolean>;
-    allowImportLocal?: pulumi.Input<boolean>;
+    admin?: pulumi.Input<boolean | undefined>;
+    allowCreateOrganization?: pulumi.Input<boolean | undefined>;
+    allowGitHook?: pulumi.Input<boolean | undefined>;
+    allowImportLocal?: pulumi.Input<boolean | undefined>;
     /**
      * A description of the user
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * E-Mail Address of the user
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * Flag if the user defined password should be overwritten or not
      */
-    forcePasswordChange?: pulumi.Input<boolean>;
+    forcePasswordChange?: pulumi.Input<boolean | undefined>;
     /**
      * Full name of the user
      */
-    fullName?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
+    fullName?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The login name can differ from the username
      */
-    loginName?: pulumi.Input<string>;
-    maxRepoCreation?: pulumi.Input<number>;
+    loginName?: pulumi.Input<string | undefined>;
+    maxRepoCreation?: pulumi.Input<number | undefined>;
     /**
      * Flag if the user should change the password after first login
      */
-    mustChangePassword?: pulumi.Input<boolean>;
+    mustChangePassword?: pulumi.Input<boolean | undefined>;
     /**
      * Password to be set for the user
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Flag if the user should not be allowed to log in (bot user)
      */
-    prohibitLogin?: pulumi.Input<boolean>;
-    restricted?: pulumi.Input<boolean>;
+    prohibitLogin?: pulumi.Input<boolean | undefined>;
+    restricted?: pulumi.Input<boolean | undefined>;
     /**
-     * Flag to send a notification about the user creation to the defined `email`
+     * Flag to send a notification about the user creation to the defined <span pulumi-lang-nodejs="`email`" pulumi-lang-dotnet="`Email`" pulumi-lang-go="`email`" pulumi-lang-python="`email`" pulumi-lang-yaml="`email`" pulumi-lang-java="`email`" pulumi-lang-hcl="`email`">`email`</span>
      */
-    sendNotification?: pulumi.Input<boolean>;
-    userId?: pulumi.Input<string>;
+    sendNotification?: pulumi.Input<boolean | undefined>;
+    userId?: pulumi.Input<string | undefined>;
     /**
      * Username of the user to be created
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
     /**
-     * Visibility of the user. Can be `public`, `limited` or `private`
+     * Visibility of the user. Can be <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`" pulumi-lang-hcl="`public`">`public`</span>, <span pulumi-lang-nodejs="`limited`" pulumi-lang-dotnet="`Limited`" pulumi-lang-go="`limited`" pulumi-lang-python="`limited`" pulumi-lang-yaml="`limited`" pulumi-lang-java="`limited`" pulumi-lang-hcl="`limited`">`limited`</span> or <span pulumi-lang-nodejs="`private`" pulumi-lang-dotnet="`Private`" pulumi-lang-go="`private`" pulumi-lang-python="`private`" pulumi-lang-yaml="`private`" pulumi-lang-java="`private`" pulumi-lang-hcl="`private`">`private`</span>
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -239,18 +239,18 @@ export interface UserArgs {
     /**
      * Flag if this user should be active or not
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Flag if this user should be an administrator or not
      */
-    admin?: pulumi.Input<boolean>;
-    allowCreateOrganization?: pulumi.Input<boolean>;
-    allowGitHook?: pulumi.Input<boolean>;
-    allowImportLocal?: pulumi.Input<boolean>;
+    admin?: pulumi.Input<boolean | undefined>;
+    allowCreateOrganization?: pulumi.Input<boolean | undefined>;
+    allowGitHook?: pulumi.Input<boolean | undefined>;
+    allowImportLocal?: pulumi.Input<boolean | undefined>;
     /**
      * A description of the user
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * E-Mail Address of the user
      */
@@ -258,21 +258,21 @@ export interface UserArgs {
     /**
      * Flag if the user defined password should be overwritten or not
      */
-    forcePasswordChange?: pulumi.Input<boolean>;
+    forcePasswordChange?: pulumi.Input<boolean | undefined>;
     /**
      * Full name of the user
      */
-    fullName?: pulumi.Input<string>;
-    location?: pulumi.Input<string>;
+    fullName?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The login name can differ from the username
      */
     loginName: pulumi.Input<string>;
-    maxRepoCreation?: pulumi.Input<number>;
+    maxRepoCreation?: pulumi.Input<number | undefined>;
     /**
      * Flag if the user should change the password after first login
      */
-    mustChangePassword?: pulumi.Input<boolean>;
+    mustChangePassword?: pulumi.Input<boolean | undefined>;
     /**
      * Password to be set for the user
      */
@@ -280,19 +280,19 @@ export interface UserArgs {
     /**
      * Flag if the user should not be allowed to log in (bot user)
      */
-    prohibitLogin?: pulumi.Input<boolean>;
-    restricted?: pulumi.Input<boolean>;
+    prohibitLogin?: pulumi.Input<boolean | undefined>;
+    restricted?: pulumi.Input<boolean | undefined>;
     /**
-     * Flag to send a notification about the user creation to the defined `email`
+     * Flag to send a notification about the user creation to the defined <span pulumi-lang-nodejs="`email`" pulumi-lang-dotnet="`Email`" pulumi-lang-go="`email`" pulumi-lang-python="`email`" pulumi-lang-yaml="`email`" pulumi-lang-java="`email`" pulumi-lang-hcl="`email`">`email`</span>
      */
-    sendNotification?: pulumi.Input<boolean>;
-    userId?: pulumi.Input<string>;
+    sendNotification?: pulumi.Input<boolean | undefined>;
+    userId?: pulumi.Input<string | undefined>;
     /**
      * Username of the user to be created
      */
     username: pulumi.Input<string>;
     /**
-     * Visibility of the user. Can be `public`, `limited` or `private`
+     * Visibility of the user. Can be <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`" pulumi-lang-hcl="`public`">`public`</span>, <span pulumi-lang-nodejs="`limited`" pulumi-lang-dotnet="`Limited`" pulumi-lang-go="`limited`" pulumi-lang-python="`limited`" pulumi-lang-yaml="`limited`" pulumi-lang-java="`limited`" pulumi-lang-hcl="`limited`">`limited`</span> or <span pulumi-lang-nodejs="`private`" pulumi-lang-dotnet="`Private`" pulumi-lang-go="`private`" pulumi-lang-python="`private`" pulumi-lang-yaml="`private`" pulumi-lang-java="`private`" pulumi-lang-hcl="`private`">`private`</span>
      */
-    visibility?: pulumi.Input<string>;
+    visibility?: pulumi.Input<string | undefined>;
 }

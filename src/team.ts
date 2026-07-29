@@ -53,7 +53,8 @@ export class Team extends pulumi.CustomResource {
      */
     declare public readonly organisation: pulumi.Output<string>;
     /**
-     * Permissions associated with this Team Can be `none`, `read`, `write`, `admin` or `owner`
+     * Permissions associated with this Team
+     * Can be <span pulumi-lang-nodejs="`none`" pulumi-lang-dotnet="`None`" pulumi-lang-go="`none`" pulumi-lang-python="`none`" pulumi-lang-yaml="`none`" pulumi-lang-java="`none`" pulumi-lang-hcl="`none`">`none`</span>, <span pulumi-lang-nodejs="`read`" pulumi-lang-dotnet="`Read`" pulumi-lang-go="`read`" pulumi-lang-python="`read`" pulumi-lang-yaml="`read`" pulumi-lang-java="`read`" pulumi-lang-hcl="`read`">`read`</span>, <span pulumi-lang-nodejs="`write`" pulumi-lang-dotnet="`Write`" pulumi-lang-go="`write`" pulumi-lang-python="`write`" pulumi-lang-yaml="`write`" pulumi-lang-java="`write`" pulumi-lang-hcl="`write`">`write`</span>, <span pulumi-lang-nodejs="`admin`" pulumi-lang-dotnet="`Admin`" pulumi-lang-go="`admin`" pulumi-lang-python="`admin`" pulumi-lang-yaml="`admin`" pulumi-lang-java="`admin`" pulumi-lang-hcl="`admin`">`admin`</span> or <span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`">`owner`</span>
      */
     declare public readonly permission: pulumi.Output<string | undefined>;
     /**
@@ -62,10 +63,14 @@ export class Team extends pulumi.CustomResource {
     declare public readonly repositories: pulumi.Output<string[]>;
     declare public readonly teamId: pulumi.Output<string>;
     /**
-     * List of types of Repositories that should be allowed to be created from Team members. Can be `repo.code`, `repo.issues`,
-     * `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects` and/or `repo.ext_wiki`
+     * List of types of Repositories that should be allowed to be created from Team members.
+     * Can be `repo.code`, `repo.issues`, `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects`, `repo.ext_wiki`, `repo.actions` and/or `repo.packages`
      */
     declare public readonly units: pulumi.Output<string | undefined>;
+    /**
+     * Map of repository units to their permissions
+     */
+    declare public readonly unitsMap: pulumi.Output<{[key: string]: string}>;
 
     /**
      * Create a Team resource with the given unique name, arguments, and options.
@@ -89,6 +94,7 @@ export class Team extends pulumi.CustomResource {
             resourceInputs["repositories"] = state?.repositories;
             resourceInputs["teamId"] = state?.teamId;
             resourceInputs["units"] = state?.units;
+            resourceInputs["unitsMap"] = state?.unitsMap;
         } else {
             const args = argsOrState as TeamArgs | undefined;
             if (args?.organisation === undefined && !opts.urn) {
@@ -103,6 +109,7 @@ export class Team extends pulumi.CustomResource {
             resourceInputs["repositories"] = args?.repositories;
             resourceInputs["teamId"] = args?.teamId;
             resourceInputs["units"] = args?.units;
+            resourceInputs["unitsMap"] = args?.unitsMap;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Team.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -116,37 +123,42 @@ export interface TeamState {
     /**
      * Flag if the Teams members should be able to create Rpositories in the Organisation
      */
-    canCreateRepos?: pulumi.Input<boolean>;
+    canCreateRepos?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Team
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Flag if the Teams members should have access to all Repositories in the Organisation
      */
-    includeAllRepositories?: pulumi.Input<boolean>;
+    includeAllRepositories?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Team
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The organisation which this Team is part of.
      */
-    organisation?: pulumi.Input<string>;
+    organisation?: pulumi.Input<string | undefined>;
     /**
-     * Permissions associated with this Team Can be `none`, `read`, `write`, `admin` or `owner`
+     * Permissions associated with this Team
+     * Can be <span pulumi-lang-nodejs="`none`" pulumi-lang-dotnet="`None`" pulumi-lang-go="`none`" pulumi-lang-python="`none`" pulumi-lang-yaml="`none`" pulumi-lang-java="`none`" pulumi-lang-hcl="`none`">`none`</span>, <span pulumi-lang-nodejs="`read`" pulumi-lang-dotnet="`Read`" pulumi-lang-go="`read`" pulumi-lang-python="`read`" pulumi-lang-yaml="`read`" pulumi-lang-java="`read`" pulumi-lang-hcl="`read`">`read`</span>, <span pulumi-lang-nodejs="`write`" pulumi-lang-dotnet="`Write`" pulumi-lang-go="`write`" pulumi-lang-python="`write`" pulumi-lang-yaml="`write`" pulumi-lang-java="`write`" pulumi-lang-hcl="`write`">`write`</span>, <span pulumi-lang-nodejs="`admin`" pulumi-lang-dotnet="`Admin`" pulumi-lang-go="`admin`" pulumi-lang-python="`admin`" pulumi-lang-yaml="`admin`" pulumi-lang-java="`admin`" pulumi-lang-hcl="`admin`">`admin`</span> or <span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`">`owner`</span>
      */
-    permission?: pulumi.Input<string>;
+    permission?: pulumi.Input<string | undefined>;
     /**
      * List of Repositories that should be part of this team
      */
-    repositories?: pulumi.Input<pulumi.Input<string>[]>;
-    teamId?: pulumi.Input<string>;
+    repositories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    teamId?: pulumi.Input<string | undefined>;
     /**
-     * List of types of Repositories that should be allowed to be created from Team members. Can be `repo.code`, `repo.issues`,
-     * `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects` and/or `repo.ext_wiki`
+     * List of types of Repositories that should be allowed to be created from Team members.
+     * Can be `repo.code`, `repo.issues`, `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects`, `repo.ext_wiki`, `repo.actions` and/or `repo.packages`
      */
-    units?: pulumi.Input<string>;
+    units?: pulumi.Input<string | undefined>;
+    /**
+     * Map of repository units to their permissions
+     */
+    unitsMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -156,35 +168,40 @@ export interface TeamArgs {
     /**
      * Flag if the Teams members should be able to create Rpositories in the Organisation
      */
-    canCreateRepos?: pulumi.Input<boolean>;
+    canCreateRepos?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the Team
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Flag if the Teams members should have access to all Repositories in the Organisation
      */
-    includeAllRepositories?: pulumi.Input<boolean>;
+    includeAllRepositories?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the Team
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The organisation which this Team is part of.
      */
     organisation: pulumi.Input<string>;
     /**
-     * Permissions associated with this Team Can be `none`, `read`, `write`, `admin` or `owner`
+     * Permissions associated with this Team
+     * Can be <span pulumi-lang-nodejs="`none`" pulumi-lang-dotnet="`None`" pulumi-lang-go="`none`" pulumi-lang-python="`none`" pulumi-lang-yaml="`none`" pulumi-lang-java="`none`" pulumi-lang-hcl="`none`">`none`</span>, <span pulumi-lang-nodejs="`read`" pulumi-lang-dotnet="`Read`" pulumi-lang-go="`read`" pulumi-lang-python="`read`" pulumi-lang-yaml="`read`" pulumi-lang-java="`read`" pulumi-lang-hcl="`read`">`read`</span>, <span pulumi-lang-nodejs="`write`" pulumi-lang-dotnet="`Write`" pulumi-lang-go="`write`" pulumi-lang-python="`write`" pulumi-lang-yaml="`write`" pulumi-lang-java="`write`" pulumi-lang-hcl="`write`">`write`</span>, <span pulumi-lang-nodejs="`admin`" pulumi-lang-dotnet="`Admin`" pulumi-lang-go="`admin`" pulumi-lang-python="`admin`" pulumi-lang-yaml="`admin`" pulumi-lang-java="`admin`" pulumi-lang-hcl="`admin`">`admin`</span> or <span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`">`owner`</span>
      */
-    permission?: pulumi.Input<string>;
+    permission?: pulumi.Input<string | undefined>;
     /**
      * List of Repositories that should be part of this team
      */
-    repositories?: pulumi.Input<pulumi.Input<string>[]>;
-    teamId?: pulumi.Input<string>;
+    repositories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    teamId?: pulumi.Input<string | undefined>;
     /**
-     * List of types of Repositories that should be allowed to be created from Team members. Can be `repo.code`, `repo.issues`,
-     * `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects` and/or `repo.ext_wiki`
+     * List of types of Repositories that should be allowed to be created from Team members.
+     * Can be `repo.code`, `repo.issues`, `repo.ext_issues`, `repo.wiki`, `repo.pulls`, `repo.releases`, `repo.projects`, `repo.ext_wiki`, `repo.actions` and/or `repo.packages`
      */
-    units?: pulumi.Input<string>;
+    units?: pulumi.Input<string | undefined>;
+    /**
+     * Map of repository units to their permissions
+     */
+    unitsMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

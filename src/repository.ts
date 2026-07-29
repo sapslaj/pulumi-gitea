@@ -50,16 +50,20 @@ export class Repository extends pulumi.CustomResource {
     declare public /*out*/ readonly cloneUrl: pulumi.Output<string>;
     declare public /*out*/ readonly created: pulumi.Output<string>;
     /**
-     * The default branch of the repository. Defaults to `main`
+     * The default branch of the repository. Defaults to <span pulumi-lang-nodejs="`main`" pulumi-lang-dotnet="`Main`" pulumi-lang-go="`main`" pulumi-lang-python="`main`" pulumi-lang-yaml="`main`" pulumi-lang-java="`main`" pulumi-lang-hcl="`main`">`main`</span>
      */
     declare public readonly defaultBranch: pulumi.Output<string | undefined>;
+    /**
+     * The default merge style for pull requests in this repository. Possible values are <span pulumi-lang-nodejs="`merge`" pulumi-lang-dotnet="`Merge`" pulumi-lang-go="`merge`" pulumi-lang-python="`merge`" pulumi-lang-yaml="`merge`" pulumi-lang-java="`merge`" pulumi-lang-hcl="`merge`">`merge`</span>, <span pulumi-lang-nodejs="`rebase`" pulumi-lang-dotnet="`Rebase`" pulumi-lang-go="`rebase`" pulumi-lang-python="`rebase`" pulumi-lang-yaml="`rebase`" pulumi-lang-java="`rebase`" pulumi-lang-hcl="`rebase`">`rebase`</span>, `rebase-merge`, <span pulumi-lang-nodejs="`squash`" pulumi-lang-dotnet="`Squash`" pulumi-lang-go="`squash`" pulumi-lang-python="`squash`" pulumi-lang-yaml="`squash`" pulumi-lang-java="`squash`" pulumi-lang-hcl="`squash`">`squash`</span>, `fast-forward-only`, or `manually-merged`.
+     */
+    declare public readonly defaultMergeStyle: pulumi.Output<string>;
     /**
      * The description of the repository.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * A specific gitignore that should be commited to the repositoryon creation if `auto_init` is set to `true` Need to exist
-     * in the gitea instance
+     * A specific gitignore that should be commited to the repositoryon creation if <span pulumi-lang-nodejs="`autoInit`" pulumi-lang-dotnet="`AutoInit`" pulumi-lang-go="`autoInit`" pulumi-lang-python="`auto_init`" pulumi-lang-yaml="`autoInit`" pulumi-lang-java="`autoInit`" pulumi-lang-hcl="`auto_init`">`autoInit`</span> is set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
+     * Need to exist in the gitea instance
      */
     declare public readonly gitignores: pulumi.Output<string | undefined>;
     /**
@@ -81,16 +85,18 @@ export class Repository extends pulumi.CustomResource {
     declare public /*out*/ readonly htmlUrl: pulumi.Output<string>;
     declare public readonly ignoreWhitespaceConflicts: pulumi.Output<boolean | undefined>;
     /**
-     * The Issue Label configuration to be used in this repository. Need to exist in the gitea instance
+     * The Issue Label configuration to be used in this repository.
+     * Need to exist in the gitea instance
      */
     declare public readonly issueLabels: pulumi.Output<string | undefined>;
     /**
-     * The license under which the source code of this repository should be. Need to exist in the gitea instance
+     * The license under which the source code of this repository should be.
+     * Need to exist in the gitea instance
      */
     declare public readonly license: pulumi.Output<string | undefined>;
     declare public readonly migrationCloneAddress: pulumi.Output<string | undefined>;
     /**
-     * DEPRECATED in favor of `migration_clone_address`
+     * DEPRECATED in favor of <span pulumi-lang-nodejs="`migrationCloneAddress`" pulumi-lang-dotnet="`MigrationCloneAddress`" pulumi-lang-go="`migrationCloneAddress`" pulumi-lang-python="`migration_clone_address`" pulumi-lang-yaml="`migrationCloneAddress`" pulumi-lang-java="`migrationCloneAddress`" pulumi-lang-hcl="`migration_clone_address`">`migrationCloneAddress`</span>
      */
     declare public readonly migrationCloneAddresse: pulumi.Output<string | undefined>;
     declare public readonly migrationIssueLabels: pulumi.Output<boolean | undefined>;
@@ -124,6 +130,14 @@ export class Repository extends pulumi.CustomResource {
     declare public readonly readme: pulumi.Output<string | undefined>;
     declare public readonly repoTemplate: pulumi.Output<boolean | undefined>;
     declare public readonly repositoryId: pulumi.Output<string>;
+    /**
+     * The name of the template repository in format <owner>/<repository_name>
+     */
+    declare public readonly sourceTemplate: pulumi.Output<string | undefined>;
+    /**
+     * List of items that will be used from the template.Possible values are <span pulumi-lang-nodejs="`gitcontent`" pulumi-lang-dotnet="`Gitcontent`" pulumi-lang-go="`gitcontent`" pulumi-lang-python="`gitcontent`" pulumi-lang-yaml="`gitcontent`" pulumi-lang-java="`gitcontent`" pulumi-lang-hcl="`gitcontent`">`gitcontent`</span>, <span pulumi-lang-nodejs="`githooks`" pulumi-lang-dotnet="`Githooks`" pulumi-lang-go="`githooks`" pulumi-lang-python="`githooks`" pulumi-lang-yaml="`githooks`" pulumi-lang-java="`githooks`" pulumi-lang-hcl="`githooks`">`githooks`</span>, <span pulumi-lang-nodejs="`webhooks`" pulumi-lang-dotnet="`Webhooks`" pulumi-lang-go="`webhooks`" pulumi-lang-python="`webhooks`" pulumi-lang-yaml="`webhooks`" pulumi-lang-java="`webhooks`" pulumi-lang-hcl="`webhooks`">`webhooks`</span>, <span pulumi-lang-nodejs="`topics`" pulumi-lang-dotnet="`Topics`" pulumi-lang-go="`topics`" pulumi-lang-python="`topics`" pulumi-lang-yaml="`topics`" pulumi-lang-java="`topics`" pulumi-lang-hcl="`topics`">`topics`</span>, <span pulumi-lang-nodejs="`avatar`" pulumi-lang-dotnet="`Avatar`" pulumi-lang-go="`avatar`" pulumi-lang-python="`avatar`" pulumi-lang-yaml="`avatar`" pulumi-lang-java="`avatar`" pulumi-lang-hcl="`avatar`">`avatar`</span>, <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>
+     */
+    declare public readonly sourceTemplateItems: pulumi.Output<string[] | undefined>;
     declare public /*out*/ readonly sshUrl: pulumi.Output<string>;
     declare public /*out*/ readonly updated: pulumi.Output<string>;
     /**
@@ -160,6 +174,7 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["cloneUrl"] = state?.cloneUrl;
             resourceInputs["created"] = state?.created;
             resourceInputs["defaultBranch"] = state?.defaultBranch;
+            resourceInputs["defaultMergeStyle"] = state?.defaultMergeStyle;
             resourceInputs["description"] = state?.description;
             resourceInputs["gitignores"] = state?.gitignores;
             resourceInputs["hasIssues"] = state?.hasIssues;
@@ -191,6 +206,8 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["readme"] = state?.readme;
             resourceInputs["repoTemplate"] = state?.repoTemplate;
             resourceInputs["repositoryId"] = state?.repositoryId;
+            resourceInputs["sourceTemplate"] = state?.sourceTemplate;
+            resourceInputs["sourceTemplateItems"] = state?.sourceTemplateItems;
             resourceInputs["sshUrl"] = state?.sshUrl;
             resourceInputs["updated"] = state?.updated;
             resourceInputs["username"] = state?.username;
@@ -210,6 +227,7 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["autoInit"] = args?.autoInit;
             resourceInputs["autodetectManualMerge"] = args?.autodetectManualMerge;
             resourceInputs["defaultBranch"] = args?.defaultBranch;
+            resourceInputs["defaultMergeStyle"] = args?.defaultMergeStyle;
             resourceInputs["description"] = args?.description;
             resourceInputs["gitignores"] = args?.gitignores;
             resourceInputs["hasIssues"] = args?.hasIssues;
@@ -237,6 +255,8 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["readme"] = args?.readme;
             resourceInputs["repoTemplate"] = args?.repoTemplate;
             resourceInputs["repositoryId"] = args?.repositoryId;
+            resourceInputs["sourceTemplate"] = args?.sourceTemplate;
+            resourceInputs["sourceTemplateItems"] = args?.sourceTemplateItems;
             resourceInputs["username"] = args?.username;
             resourceInputs["website"] = args?.website;
             resourceInputs["cloneUrl"] = undefined /*out*/;
@@ -259,200 +279,228 @@ export class Repository extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Repository resources.
  */
 export interface RepositoryState {
-    allowManualMerge?: pulumi.Input<boolean>;
-    allowMergeCommits?: pulumi.Input<boolean>;
-    allowRebase?: pulumi.Input<boolean>;
-    allowRebaseExplicit?: pulumi.Input<boolean>;
-    allowSquashMerge?: pulumi.Input<boolean>;
+    allowManualMerge?: pulumi.Input<boolean | undefined>;
+    allowMergeCommits?: pulumi.Input<boolean | undefined>;
+    allowRebase?: pulumi.Input<boolean | undefined>;
+    allowRebaseExplicit?: pulumi.Input<boolean | undefined>;
+    allowSquashMerge?: pulumi.Input<boolean | undefined>;
     /**
      * Set to 'true' to archive the repository instead of deleting on destroy.
      */
-    archiveOnDestroy?: pulumi.Input<boolean>;
-    archived?: pulumi.Input<boolean>;
+    archiveOnDestroy?: pulumi.Input<boolean | undefined>;
+    archived?: pulumi.Input<boolean | undefined>;
     /**
      * Flag if the repository should be initiated with the configured values
      */
-    autoInit?: pulumi.Input<boolean>;
-    autodetectManualMerge?: pulumi.Input<boolean>;
-    cloneUrl?: pulumi.Input<string>;
-    created?: pulumi.Input<string>;
+    autoInit?: pulumi.Input<boolean | undefined>;
+    autodetectManualMerge?: pulumi.Input<boolean | undefined>;
+    cloneUrl?: pulumi.Input<string | undefined>;
+    created?: pulumi.Input<string | undefined>;
     /**
-     * The default branch of the repository. Defaults to `main`
+     * The default branch of the repository. Defaults to <span pulumi-lang-nodejs="`main`" pulumi-lang-dotnet="`Main`" pulumi-lang-go="`main`" pulumi-lang-python="`main`" pulumi-lang-yaml="`main`" pulumi-lang-java="`main`" pulumi-lang-hcl="`main`">`main`</span>
      */
-    defaultBranch?: pulumi.Input<string>;
+    defaultBranch?: pulumi.Input<string | undefined>;
+    /**
+     * The default merge style for pull requests in this repository. Possible values are <span pulumi-lang-nodejs="`merge`" pulumi-lang-dotnet="`Merge`" pulumi-lang-go="`merge`" pulumi-lang-python="`merge`" pulumi-lang-yaml="`merge`" pulumi-lang-java="`merge`" pulumi-lang-hcl="`merge`">`merge`</span>, <span pulumi-lang-nodejs="`rebase`" pulumi-lang-dotnet="`Rebase`" pulumi-lang-go="`rebase`" pulumi-lang-python="`rebase`" pulumi-lang-yaml="`rebase`" pulumi-lang-java="`rebase`" pulumi-lang-hcl="`rebase`">`rebase`</span>, `rebase-merge`, <span pulumi-lang-nodejs="`squash`" pulumi-lang-dotnet="`Squash`" pulumi-lang-go="`squash`" pulumi-lang-python="`squash`" pulumi-lang-yaml="`squash`" pulumi-lang-java="`squash`" pulumi-lang-hcl="`squash`">`squash`</span>, `fast-forward-only`, or `manually-merged`.
+     */
+    defaultMergeStyle?: pulumi.Input<string | undefined>;
     /**
      * The description of the repository.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * A specific gitignore that should be commited to the repositoryon creation if `auto_init` is set to `true` Need to exist
-     * in the gitea instance
+     * A specific gitignore that should be commited to the repositoryon creation if <span pulumi-lang-nodejs="`autoInit`" pulumi-lang-dotnet="`AutoInit`" pulumi-lang-go="`autoInit`" pulumi-lang-python="`auto_init`" pulumi-lang-yaml="`autoInit`" pulumi-lang-java="`autoInit`" pulumi-lang-hcl="`auto_init`">`autoInit`</span> is set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
+     * Need to exist in the gitea instance
      */
-    gitignores?: pulumi.Input<string>;
+    gitignores?: pulumi.Input<string | undefined>;
     /**
      * A flag if the repository should have issue management enabled or not.
      */
-    hasIssues?: pulumi.Input<boolean>;
+    hasIssues?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should have the native project management enabled or not.
      */
-    hasProjects?: pulumi.Input<boolean>;
+    hasProjects?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should acceppt pull requests or not.
      */
-    hasPullRequests?: pulumi.Input<boolean>;
+    hasPullRequests?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should have the native wiki enabled or not.
      */
-    hasWiki?: pulumi.Input<boolean>;
-    htmlUrl?: pulumi.Input<string>;
-    ignoreWhitespaceConflicts?: pulumi.Input<boolean>;
+    hasWiki?: pulumi.Input<boolean | undefined>;
+    htmlUrl?: pulumi.Input<string | undefined>;
+    ignoreWhitespaceConflicts?: pulumi.Input<boolean | undefined>;
     /**
-     * The Issue Label configuration to be used in this repository. Need to exist in the gitea instance
+     * The Issue Label configuration to be used in this repository.
+     * Need to exist in the gitea instance
      */
-    issueLabels?: pulumi.Input<string>;
+    issueLabels?: pulumi.Input<string | undefined>;
     /**
-     * The license under which the source code of this repository should be. Need to exist in the gitea instance
+     * The license under which the source code of this repository should be.
+     * Need to exist in the gitea instance
      */
-    license?: pulumi.Input<string>;
-    migrationCloneAddress?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
+    migrationCloneAddress?: pulumi.Input<string | undefined>;
     /**
-     * DEPRECATED in favor of `migration_clone_address`
+     * DEPRECATED in favor of <span pulumi-lang-nodejs="`migrationCloneAddress`" pulumi-lang-dotnet="`MigrationCloneAddress`" pulumi-lang-go="`migrationCloneAddress`" pulumi-lang-python="`migration_clone_address`" pulumi-lang-yaml="`migrationCloneAddress`" pulumi-lang-java="`migrationCloneAddress`" pulumi-lang-hcl="`migration_clone_address`">`migrationCloneAddress`</span>
      */
-    migrationCloneAddresse?: pulumi.Input<string>;
-    migrationIssueLabels?: pulumi.Input<boolean>;
-    migrationLfs?: pulumi.Input<boolean>;
-    migrationLfsEndpoint?: pulumi.Input<string>;
-    migrationMilestones?: pulumi.Input<boolean>;
+    migrationCloneAddresse?: pulumi.Input<string | undefined>;
+    migrationIssueLabels?: pulumi.Input<boolean | undefined>;
+    migrationLfs?: pulumi.Input<boolean | undefined>;
+    migrationLfsEndpoint?: pulumi.Input<string | undefined>;
+    migrationMilestones?: pulumi.Input<boolean | undefined>;
     /**
      * valid time units are 'h', 'm', 's'. 0 to disable automatic sync
      */
-    migrationMirrorInterval?: pulumi.Input<string>;
-    migrationReleases?: pulumi.Input<boolean>;
+    migrationMirrorInterval?: pulumi.Input<string | undefined>;
+    migrationReleases?: pulumi.Input<boolean | undefined>;
     /**
      * git/github/gitlab/gitea/gogs
      */
-    migrationService?: pulumi.Input<string>;
-    migrationServiceAuthPassword?: pulumi.Input<string>;
-    migrationServiceAuthToken?: pulumi.Input<string>;
-    migrationServiceAuthUsername?: pulumi.Input<string>;
-    mirror?: pulumi.Input<boolean>;
+    migrationService?: pulumi.Input<string | undefined>;
+    migrationServiceAuthPassword?: pulumi.Input<string | undefined>;
+    migrationServiceAuthToken?: pulumi.Input<string | undefined>;
+    migrationServiceAuthUsername?: pulumi.Input<string | undefined>;
+    mirror?: pulumi.Input<boolean | undefined>;
     /**
      * The Name of the repository
      */
-    name?: pulumi.Input<string>;
-    permissionAdmin?: pulumi.Input<boolean>;
-    permissionPull?: pulumi.Input<boolean>;
-    permissionPush?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string | undefined>;
+    permissionAdmin?: pulumi.Input<boolean | undefined>;
+    permissionPull?: pulumi.Input<boolean | undefined>;
+    permissionPush?: pulumi.Input<boolean | undefined>;
     /**
      * Flag if the repository should be private or not.
      */
-    private?: pulumi.Input<boolean>;
-    readme?: pulumi.Input<string>;
-    repoTemplate?: pulumi.Input<boolean>;
-    repositoryId?: pulumi.Input<string>;
-    sshUrl?: pulumi.Input<string>;
-    updated?: pulumi.Input<string>;
+    private?: pulumi.Input<boolean | undefined>;
+    readme?: pulumi.Input<string | undefined>;
+    repoTemplate?: pulumi.Input<boolean | undefined>;
+    repositoryId?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the template repository in format <owner>/<repository_name>
+     */
+    sourceTemplate?: pulumi.Input<string | undefined>;
+    /**
+     * List of items that will be used from the template.Possible values are <span pulumi-lang-nodejs="`gitcontent`" pulumi-lang-dotnet="`Gitcontent`" pulumi-lang-go="`gitcontent`" pulumi-lang-python="`gitcontent`" pulumi-lang-yaml="`gitcontent`" pulumi-lang-java="`gitcontent`" pulumi-lang-hcl="`gitcontent`">`gitcontent`</span>, <span pulumi-lang-nodejs="`githooks`" pulumi-lang-dotnet="`Githooks`" pulumi-lang-go="`githooks`" pulumi-lang-python="`githooks`" pulumi-lang-yaml="`githooks`" pulumi-lang-java="`githooks`" pulumi-lang-hcl="`githooks`">`githooks`</span>, <span pulumi-lang-nodejs="`webhooks`" pulumi-lang-dotnet="`Webhooks`" pulumi-lang-go="`webhooks`" pulumi-lang-python="`webhooks`" pulumi-lang-yaml="`webhooks`" pulumi-lang-java="`webhooks`" pulumi-lang-hcl="`webhooks`">`webhooks`</span>, <span pulumi-lang-nodejs="`topics`" pulumi-lang-dotnet="`Topics`" pulumi-lang-go="`topics`" pulumi-lang-python="`topics`" pulumi-lang-yaml="`topics`" pulumi-lang-java="`topics`" pulumi-lang-hcl="`topics`">`topics`</span>, <span pulumi-lang-nodejs="`avatar`" pulumi-lang-dotnet="`Avatar`" pulumi-lang-go="`avatar`" pulumi-lang-python="`avatar`" pulumi-lang-yaml="`avatar`" pulumi-lang-java="`avatar`" pulumi-lang-hcl="`avatar`">`avatar`</span>, <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>
+     */
+    sourceTemplateItems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    sshUrl?: pulumi.Input<string | undefined>;
+    updated?: pulumi.Input<string | undefined>;
     /**
      * The Owner of the repository
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
     /**
      * A link to a website with more information.
      */
-    website?: pulumi.Input<string>;
+    website?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a Repository resource.
  */
 export interface RepositoryArgs {
-    allowManualMerge?: pulumi.Input<boolean>;
-    allowMergeCommits?: pulumi.Input<boolean>;
-    allowRebase?: pulumi.Input<boolean>;
-    allowRebaseExplicit?: pulumi.Input<boolean>;
-    allowSquashMerge?: pulumi.Input<boolean>;
+    allowManualMerge?: pulumi.Input<boolean | undefined>;
+    allowMergeCommits?: pulumi.Input<boolean | undefined>;
+    allowRebase?: pulumi.Input<boolean | undefined>;
+    allowRebaseExplicit?: pulumi.Input<boolean | undefined>;
+    allowSquashMerge?: pulumi.Input<boolean | undefined>;
     /**
      * Set to 'true' to archive the repository instead of deleting on destroy.
      */
-    archiveOnDestroy?: pulumi.Input<boolean>;
-    archived?: pulumi.Input<boolean>;
+    archiveOnDestroy?: pulumi.Input<boolean | undefined>;
+    archived?: pulumi.Input<boolean | undefined>;
     /**
      * Flag if the repository should be initiated with the configured values
      */
-    autoInit?: pulumi.Input<boolean>;
-    autodetectManualMerge?: pulumi.Input<boolean>;
+    autoInit?: pulumi.Input<boolean | undefined>;
+    autodetectManualMerge?: pulumi.Input<boolean | undefined>;
     /**
-     * The default branch of the repository. Defaults to `main`
+     * The default branch of the repository. Defaults to <span pulumi-lang-nodejs="`main`" pulumi-lang-dotnet="`Main`" pulumi-lang-go="`main`" pulumi-lang-python="`main`" pulumi-lang-yaml="`main`" pulumi-lang-java="`main`" pulumi-lang-hcl="`main`">`main`</span>
      */
-    defaultBranch?: pulumi.Input<string>;
+    defaultBranch?: pulumi.Input<string | undefined>;
+    /**
+     * The default merge style for pull requests in this repository. Possible values are <span pulumi-lang-nodejs="`merge`" pulumi-lang-dotnet="`Merge`" pulumi-lang-go="`merge`" pulumi-lang-python="`merge`" pulumi-lang-yaml="`merge`" pulumi-lang-java="`merge`" pulumi-lang-hcl="`merge`">`merge`</span>, <span pulumi-lang-nodejs="`rebase`" pulumi-lang-dotnet="`Rebase`" pulumi-lang-go="`rebase`" pulumi-lang-python="`rebase`" pulumi-lang-yaml="`rebase`" pulumi-lang-java="`rebase`" pulumi-lang-hcl="`rebase`">`rebase`</span>, `rebase-merge`, <span pulumi-lang-nodejs="`squash`" pulumi-lang-dotnet="`Squash`" pulumi-lang-go="`squash`" pulumi-lang-python="`squash`" pulumi-lang-yaml="`squash`" pulumi-lang-java="`squash`" pulumi-lang-hcl="`squash`">`squash`</span>, `fast-forward-only`, or `manually-merged`.
+     */
+    defaultMergeStyle?: pulumi.Input<string | undefined>;
     /**
      * The description of the repository.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
-     * A specific gitignore that should be commited to the repositoryon creation if `auto_init` is set to `true` Need to exist
-     * in the gitea instance
+     * A specific gitignore that should be commited to the repositoryon creation if <span pulumi-lang-nodejs="`autoInit`" pulumi-lang-dotnet="`AutoInit`" pulumi-lang-go="`autoInit`" pulumi-lang-python="`auto_init`" pulumi-lang-yaml="`autoInit`" pulumi-lang-java="`autoInit`" pulumi-lang-hcl="`auto_init`">`autoInit`</span> is set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
+     * Need to exist in the gitea instance
      */
-    gitignores?: pulumi.Input<string>;
+    gitignores?: pulumi.Input<string | undefined>;
     /**
      * A flag if the repository should have issue management enabled or not.
      */
-    hasIssues?: pulumi.Input<boolean>;
+    hasIssues?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should have the native project management enabled or not.
      */
-    hasProjects?: pulumi.Input<boolean>;
+    hasProjects?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should acceppt pull requests or not.
      */
-    hasPullRequests?: pulumi.Input<boolean>;
+    hasPullRequests?: pulumi.Input<boolean | undefined>;
     /**
      * A flag if the repository should have the native wiki enabled or not.
      */
-    hasWiki?: pulumi.Input<boolean>;
-    ignoreWhitespaceConflicts?: pulumi.Input<boolean>;
+    hasWiki?: pulumi.Input<boolean | undefined>;
+    ignoreWhitespaceConflicts?: pulumi.Input<boolean | undefined>;
     /**
-     * The Issue Label configuration to be used in this repository. Need to exist in the gitea instance
+     * The Issue Label configuration to be used in this repository.
+     * Need to exist in the gitea instance
      */
-    issueLabels?: pulumi.Input<string>;
+    issueLabels?: pulumi.Input<string | undefined>;
     /**
-     * The license under which the source code of this repository should be. Need to exist in the gitea instance
+     * The license under which the source code of this repository should be.
+     * Need to exist in the gitea instance
      */
-    license?: pulumi.Input<string>;
-    migrationCloneAddress?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
+    migrationCloneAddress?: pulumi.Input<string | undefined>;
     /**
-     * DEPRECATED in favor of `migration_clone_address`
+     * DEPRECATED in favor of <span pulumi-lang-nodejs="`migrationCloneAddress`" pulumi-lang-dotnet="`MigrationCloneAddress`" pulumi-lang-go="`migrationCloneAddress`" pulumi-lang-python="`migration_clone_address`" pulumi-lang-yaml="`migrationCloneAddress`" pulumi-lang-java="`migrationCloneAddress`" pulumi-lang-hcl="`migration_clone_address`">`migrationCloneAddress`</span>
      */
-    migrationCloneAddresse?: pulumi.Input<string>;
-    migrationIssueLabels?: pulumi.Input<boolean>;
-    migrationLfs?: pulumi.Input<boolean>;
-    migrationLfsEndpoint?: pulumi.Input<string>;
-    migrationMilestones?: pulumi.Input<boolean>;
+    migrationCloneAddresse?: pulumi.Input<string | undefined>;
+    migrationIssueLabels?: pulumi.Input<boolean | undefined>;
+    migrationLfs?: pulumi.Input<boolean | undefined>;
+    migrationLfsEndpoint?: pulumi.Input<string | undefined>;
+    migrationMilestones?: pulumi.Input<boolean | undefined>;
     /**
      * valid time units are 'h', 'm', 's'. 0 to disable automatic sync
      */
-    migrationMirrorInterval?: pulumi.Input<string>;
-    migrationReleases?: pulumi.Input<boolean>;
+    migrationMirrorInterval?: pulumi.Input<string | undefined>;
+    migrationReleases?: pulumi.Input<boolean | undefined>;
     /**
      * git/github/gitlab/gitea/gogs
      */
-    migrationService?: pulumi.Input<string>;
-    migrationServiceAuthPassword?: pulumi.Input<string>;
-    migrationServiceAuthToken?: pulumi.Input<string>;
-    migrationServiceAuthUsername?: pulumi.Input<string>;
-    mirror?: pulumi.Input<boolean>;
+    migrationService?: pulumi.Input<string | undefined>;
+    migrationServiceAuthPassword?: pulumi.Input<string | undefined>;
+    migrationServiceAuthToken?: pulumi.Input<string | undefined>;
+    migrationServiceAuthUsername?: pulumi.Input<string | undefined>;
+    mirror?: pulumi.Input<boolean | undefined>;
     /**
      * The Name of the repository
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Flag if the repository should be private or not.
      */
-    private?: pulumi.Input<boolean>;
-    readme?: pulumi.Input<string>;
-    repoTemplate?: pulumi.Input<boolean>;
-    repositoryId?: pulumi.Input<string>;
+    private?: pulumi.Input<boolean | undefined>;
+    readme?: pulumi.Input<string | undefined>;
+    repoTemplate?: pulumi.Input<boolean | undefined>;
+    repositoryId?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the template repository in format <owner>/<repository_name>
+     */
+    sourceTemplate?: pulumi.Input<string | undefined>;
+    /**
+     * List of items that will be used from the template.Possible values are <span pulumi-lang-nodejs="`gitcontent`" pulumi-lang-dotnet="`Gitcontent`" pulumi-lang-go="`gitcontent`" pulumi-lang-python="`gitcontent`" pulumi-lang-yaml="`gitcontent`" pulumi-lang-java="`gitcontent`" pulumi-lang-hcl="`gitcontent`">`gitcontent`</span>, <span pulumi-lang-nodejs="`githooks`" pulumi-lang-dotnet="`Githooks`" pulumi-lang-go="`githooks`" pulumi-lang-python="`githooks`" pulumi-lang-yaml="`githooks`" pulumi-lang-java="`githooks`" pulumi-lang-hcl="`githooks`">`githooks`</span>, <span pulumi-lang-nodejs="`webhooks`" pulumi-lang-dotnet="`Webhooks`" pulumi-lang-go="`webhooks`" pulumi-lang-python="`webhooks`" pulumi-lang-yaml="`webhooks`" pulumi-lang-java="`webhooks`" pulumi-lang-hcl="`webhooks`">`webhooks`</span>, <span pulumi-lang-nodejs="`topics`" pulumi-lang-dotnet="`Topics`" pulumi-lang-go="`topics`" pulumi-lang-python="`topics`" pulumi-lang-yaml="`topics`" pulumi-lang-java="`topics`" pulumi-lang-hcl="`topics`">`topics`</span>, <span pulumi-lang-nodejs="`avatar`" pulumi-lang-dotnet="`Avatar`" pulumi-lang-go="`avatar`" pulumi-lang-python="`avatar`" pulumi-lang-yaml="`avatar`" pulumi-lang-java="`avatar`" pulumi-lang-hcl="`avatar`">`avatar`</span>, <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>
+     */
+    sourceTemplateItems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Owner of the repository
      */
@@ -460,5 +508,5 @@ export interface RepositoryArgs {
     /**
      * A link to a website with more information.
      */
-    website?: pulumi.Input<string>;
+    website?: pulumi.Input<string | undefined>;
 }

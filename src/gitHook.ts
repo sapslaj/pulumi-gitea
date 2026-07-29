@@ -97,20 +97,20 @@ export interface GitHookState {
     /**
      * Content of the git hook
      */
-    content?: pulumi.Input<string>;
-    gitHookId?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
+    gitHookId?: pulumi.Input<string | undefined>;
     /**
      * Name of the git hook to configure
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The repository that this hook belongs too.
      */
-    repo?: pulumi.Input<string>;
+    repo?: pulumi.Input<string | undefined>;
     /**
      * The user (or organisation) owning the repo this hook belongs too
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -121,11 +121,11 @@ export interface GitHookArgs {
      * Content of the git hook
      */
     content: pulumi.Input<string>;
-    gitHookId?: pulumi.Input<string>;
+    gitHookId?: pulumi.Input<string | undefined>;
     /**
      * Name of the git hook to configure
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The repository that this hook belongs too.
      */

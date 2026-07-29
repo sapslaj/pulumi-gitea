@@ -82,12 +82,12 @@ export interface TeamMembershipState {
     /**
      * The ID of the team.
      */
-    teamId?: pulumi.Input<number>;
-    teamMembershipId?: pulumi.Input<string>;
+    teamId?: pulumi.Input<number | undefined>;
+    teamMembershipId?: pulumi.Input<string | undefined>;
     /**
      * The username of the team member.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -98,7 +98,7 @@ export interface TeamMembershipArgs {
      * The ID of the team.
      */
     teamId: pulumi.Input<number>;
-    teamMembershipId?: pulumi.Input<string>;
+    teamMembershipId?: pulumi.Input<string | undefined>;
     /**
      * The username of the team member.
      */

@@ -86,27 +86,27 @@ export interface ProviderArgs {
     /**
      * The Gitea Base API URL
      */
-    baseUrl?: pulumi.Input<string>;
+    baseUrl?: pulumi.Input<string | undefined>;
     /**
      * A file containing the ca certificate to use in case ssl certificate is not from a standard chain
      */
-    cacertFile?: pulumi.Input<string>;
+    cacertFile?: pulumi.Input<string | undefined>;
     /**
      * Disable SSL verification of API calls
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * Password in case of using basic auth
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The application token used to connect to Gitea.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Username in case of using basic auth
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

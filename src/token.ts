@@ -87,20 +87,20 @@ export class Token extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Token resources.
  */
 export interface TokenState {
-    lastEight?: pulumi.Input<string>;
+    lastEight?: pulumi.Input<string | undefined>;
     /**
      * The name of the Access Token
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of string representations of scopes for the token
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The actual Access Token
      */
-    token?: pulumi.Input<string>;
-    tokenId?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
+    tokenId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -110,10 +110,10 @@ export interface TokenArgs {
     /**
      * The name of the Access Token
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of string representations of scopes for the token
      */
     scopes: pulumi.Input<pulumi.Input<string>[]>;
-    tokenId?: pulumi.Input<string>;
+    tokenId?: pulumi.Input<string | undefined>;
 }

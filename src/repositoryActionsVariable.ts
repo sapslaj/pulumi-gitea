@@ -100,20 +100,20 @@ export interface RepositoryActionsVariableState {
     /**
      * Name of the repository.
      */
-    repository?: pulumi.Input<string>;
-    repositoryActionsVariableId?: pulumi.Input<string>;
+    repository?: pulumi.Input<string | undefined>;
+    repositoryActionsVariableId?: pulumi.Input<string | undefined>;
     /**
      * Owner of the repository.
      */
-    repositoryOwner?: pulumi.Input<string>;
+    repositoryOwner?: pulumi.Input<string | undefined>;
     /**
      * Value of the variable.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * Name of the variable.
      */
-    variableName?: pulumi.Input<string>;
+    variableName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -124,7 +124,7 @@ export interface RepositoryActionsVariableArgs {
      * Name of the repository.
      */
     repository: pulumi.Input<string>;
-    repositoryActionsVariableId?: pulumi.Input<string>;
+    repositoryActionsVariableId?: pulumi.Input<string | undefined>;
     /**
      * Owner of the repository.
      */

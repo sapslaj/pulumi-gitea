@@ -105,26 +105,26 @@ export class PublicKey extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PublicKey resources.
  */
 export interface PublicKeyState {
-    created?: pulumi.Input<string>;
-    fingerprint?: pulumi.Input<string>;
+    created?: pulumi.Input<string | undefined>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * An armored SSH key to add
      */
-    key?: pulumi.Input<string>;
-    publicKeyId?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
+    publicKeyId?: pulumi.Input<string | undefined>;
     /**
      * Describe if the key has only read access or read/write
      */
-    readOnly?: pulumi.Input<boolean>;
+    readOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Title of the key to add
      */
-    title?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * User to associate with the added key
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -135,11 +135,11 @@ export interface PublicKeyArgs {
      * An armored SSH key to add
      */
     key: pulumi.Input<string>;
-    publicKeyId?: pulumi.Input<string>;
+    publicKeyId?: pulumi.Input<string | undefined>;
     /**
      * Describe if the key has only read access or read/write
      */
-    readOnly?: pulumi.Input<boolean>;
+    readOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Title of the key to add
      */

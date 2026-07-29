@@ -33,17 +33,24 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
     }
 
     /**
-     * Only reviews from allowlisted teams will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted teams will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
     declare public readonly approvalWhitelistTeams: pulumi.Output<string[] | undefined>;
     /**
-     * Only reviews from allowlisted users will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted users will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
     declare public readonly approvalWhitelistUsers: pulumi.Output<string[] | undefined>;
     /**
-     * Merging will not be possible when it has official review requests, even if there are enough approvals.
+     * Prevent admins from bypassing branch protection rules when merging.
+     */
+    declare public readonly blockAdminMergeOverride: pulumi.Output<boolean | undefined>;
+    /**
+     * Merging will not be possible when it has official
+     * 								review requests, even if there are enough approvals.
      */
     declare public readonly blockMergeOnOfficialReviewRequests: pulumi.Output<boolean | undefined>;
     /**
@@ -51,7 +58,9 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public readonly blockMergeOnOutdatedBranch: pulumi.Output<boolean | undefined>;
     /**
-     * Merging will not be possible when changes are requested by official reviewers, even if there are enough approvals.
+     * Merging will not be possible when changes are
+     * 								requested by official reviewers, even if there are enough
+     * 								approvals.
      */
     declare public readonly blockMergeOnRejectedReviews: pulumi.Output<boolean | undefined>;
     /**
@@ -59,7 +68,8 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly createdAt: pulumi.Output<string>;
     /**
-     * When new commits that change the content of the pull request are pushed to the branch, old approvals will be dismissed.
+     * When new commits that change the content of the pull request
+     * 								are pushed to the branch, old approvals will be dismissed.
      */
     declare public readonly dismissStaleApprovals: pulumi.Output<boolean | undefined>;
     /**
@@ -71,8 +81,9 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly enableMergeWhitelist: pulumi.Output<boolean>;
     /**
-     * Anyone with write access will be allowed to push to this branch (but not force push), add a whitelist users or teams to
-     * limit access.
+     * Anyone with write access will be allowed to push to this branch
+     * 								(but not force push), add a whitelist users or teams to limit
+     * 								access.
      */
     declare public readonly enablePush: pulumi.Output<boolean | undefined>;
     /**
@@ -80,9 +91,11 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly enablePushWhitelist: pulumi.Output<boolean>;
     /**
-     * Require status checks to pass before merging. When enabled, commits must first be pushed to another branch, then merged
-     * or pushed directly to a branch that matches this rule after status checks have passed. If no contexts are matched, the
-     * last commit must be successful regardless of context
+     * Require status checks to pass before merging. When enabled,
+     * 								commits must first be pushed to another branch, then merged
+     * 								or pushed directly to a branch that matches this rule after
+     * 								status checks have passed. If no contexts are matched, the
+     * 								last commit must be successful regardless of context
      */
     declare public /*out*/ readonly enableStatusCheck: pulumi.Output<boolean>;
     /**
@@ -102,15 +115,15 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public readonly protectedFilePatterns: pulumi.Output<string | undefined>;
     /**
-     * Allow deploy keys with write access to push. Requires enable_push to be set to true.
+     * Allow deploy keys with write access to push. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
     declare public readonly pushWhitelistDeployKeys: pulumi.Output<boolean | undefined>;
     /**
-     * Allowlisted teams for pushing. Requires enable_push to be set to true.
+     * Allowlisted teams for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
     declare public readonly pushWhitelistTeams: pulumi.Output<string[] | undefined>;
     /**
-     * Allowlisted users for pushing. Requires enable_push to be set to true.
+     * Allowlisted users for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
     declare public readonly pushWhitelistUsers: pulumi.Output<string[] | undefined>;
     declare public readonly repositoryBranchProtectionId: pulumi.Output<string>;
@@ -127,8 +140,9 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
      */
     declare public readonly ruleName: pulumi.Output<string>;
     /**
-     * Enter patterns to specify which status checks must pass before branches can be merged into a branch that matches this
-     * rule. Each line specifies a pattern. Patterns cannot be empty.
+     * Enter patterns to specify which status checks must pass before
+     * 								branches can be merged into a branch that matches this rule.
+     * 								Each line specifies a pattern. Patterns cannot be empty.
      */
     declare public readonly statusCheckPatterns: pulumi.Output<string[] | undefined>;
     /**
@@ -159,6 +173,7 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
             const state = argsOrState as RepositoryBranchProtectionState | undefined;
             resourceInputs["approvalWhitelistTeams"] = state?.approvalWhitelistTeams;
             resourceInputs["approvalWhitelistUsers"] = state?.approvalWhitelistUsers;
+            resourceInputs["blockAdminMergeOverride"] = state?.blockAdminMergeOverride;
             resourceInputs["blockMergeOnOfficialReviewRequests"] = state?.blockMergeOnOfficialReviewRequests;
             resourceInputs["blockMergeOnOutdatedBranch"] = state?.blockMergeOnOutdatedBranch;
             resourceInputs["blockMergeOnRejectedReviews"] = state?.blockMergeOnRejectedReviews;
@@ -194,6 +209,7 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
             }
             resourceInputs["approvalWhitelistTeams"] = args?.approvalWhitelistTeams;
             resourceInputs["approvalWhitelistUsers"] = args?.approvalWhitelistUsers;
+            resourceInputs["blockAdminMergeOverride"] = args?.blockAdminMergeOverride;
             resourceInputs["blockMergeOnOfficialReviewRequests"] = args?.blockMergeOnOfficialReviewRequests;
             resourceInputs["blockMergeOnOutdatedBranch"] = args?.blockMergeOnOutdatedBranch;
             resourceInputs["blockMergeOnRejectedReviews"] = args?.blockMergeOnRejectedReviews;
@@ -230,116 +246,130 @@ export class RepositoryBranchProtection extends pulumi.CustomResource {
  */
 export interface RepositoryBranchProtectionState {
     /**
-     * Only reviews from allowlisted teams will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted teams will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
-    approvalWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    approvalWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Only reviews from allowlisted users will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted users will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
-    approvalWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    approvalWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Merging will not be possible when it has official review requests, even if there are enough approvals.
+     * Prevent admins from bypassing branch protection rules when merging.
      */
-    blockMergeOnOfficialReviewRequests?: pulumi.Input<boolean>;
+    blockAdminMergeOverride?: pulumi.Input<boolean | undefined>;
+    /**
+     * Merging will not be possible when it has official
+     * 								review requests, even if there are enough approvals.
+     */
+    blockMergeOnOfficialReviewRequests?: pulumi.Input<boolean | undefined>;
     /**
      * Merging will not be possible when head branch is behind base branch.
      */
-    blockMergeOnOutdatedBranch?: pulumi.Input<boolean>;
+    blockMergeOnOutdatedBranch?: pulumi.Input<boolean | undefined>;
     /**
-     * Merging will not be possible when changes are requested by official reviewers, even if there are enough approvals.
+     * Merging will not be possible when changes are
+     * 								requested by official reviewers, even if there are enough
+     * 								approvals.
      */
-    blockMergeOnRejectedReviews?: pulumi.Input<boolean>;
+    blockMergeOnRejectedReviews?: pulumi.Input<boolean | undefined>;
     /**
      * Webhook creation timestamp
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
-     * When new commits that change the content of the pull request are pushed to the branch, old approvals will be dismissed.
+     * When new commits that change the content of the pull request
+     * 								are pushed to the branch, old approvals will be dismissed.
      */
-    dismissStaleApprovals?: pulumi.Input<boolean>;
+    dismissStaleApprovals?: pulumi.Input<boolean | undefined>;
     /**
      * True if a approval whitelist is used.
      */
-    enableApprovalWhitelist?: pulumi.Input<boolean>;
+    enableApprovalWhitelist?: pulumi.Input<boolean | undefined>;
     /**
      * True if a merge whitelist is used.
      */
-    enableMergeWhitelist?: pulumi.Input<boolean>;
+    enableMergeWhitelist?: pulumi.Input<boolean | undefined>;
     /**
-     * Anyone with write access will be allowed to push to this branch (but not force push), add a whitelist users or teams to
-     * limit access.
+     * Anyone with write access will be allowed to push to this branch
+     * 								(but not force push), add a whitelist users or teams to limit
+     * 								access.
      */
-    enablePush?: pulumi.Input<boolean>;
+    enablePush?: pulumi.Input<boolean | undefined>;
     /**
      * True if a push whitelist is used.
      */
-    enablePushWhitelist?: pulumi.Input<boolean>;
+    enablePushWhitelist?: pulumi.Input<boolean | undefined>;
     /**
-     * Require status checks to pass before merging. When enabled, commits must first be pushed to another branch, then merged
-     * or pushed directly to a branch that matches this rule after status checks have passed. If no contexts are matched, the
-     * last commit must be successful regardless of context
+     * Require status checks to pass before merging. When enabled,
+     * 								commits must first be pushed to another branch, then merged
+     * 								or pushed directly to a branch that matches this rule after
+     * 								status checks have passed. If no contexts are matched, the
+     * 								last commit must be successful regardless of context
      */
-    enableStatusCheck?: pulumi.Input<boolean>;
+    enableStatusCheck?: pulumi.Input<boolean | undefined>;
     /**
      * Allow only allowlisted teams to merge pull requests into this branch.
      */
-    mergeWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    mergeWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Allow only allowlisted users to merge pull requests into this branch.
      */
-    mergeWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    mergeWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Repository name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Protected file patterns (separated using semicolon ';')
      */
-    protectedFilePatterns?: pulumi.Input<string>;
+    protectedFilePatterns?: pulumi.Input<string | undefined>;
     /**
-     * Allow deploy keys with write access to push. Requires enable_push to be set to true.
+     * Allow deploy keys with write access to push. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistDeployKeys?: pulumi.Input<boolean>;
+    pushWhitelistDeployKeys?: pulumi.Input<boolean | undefined>;
     /**
-     * Allowlisted teams for pushing. Requires enable_push to be set to true.
+     * Allowlisted teams for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    pushWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Allowlisted users for pushing. Requires enable_push to be set to true.
+     * Allowlisted users for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
-    repositoryBranchProtectionId?: pulumi.Input<string>;
+    pushWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    repositoryBranchProtectionId?: pulumi.Input<string | undefined>;
     /**
      * Reject pushes to this branch if they are unsigned or unverifiable.
      */
-    requireSignedCommits?: pulumi.Input<boolean>;
+    requireSignedCommits?: pulumi.Input<boolean | undefined>;
     /**
      * Allow only to merge pull request with enough positive reviews.
      */
-    requiredApprovals?: pulumi.Input<number>;
+    requiredApprovals?: pulumi.Input<number | undefined>;
     /**
      * Protected Branch Name Pattern
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
-     * Enter patterns to specify which status checks must pass before branches can be merged into a branch that matches this
-     * rule. Each line specifies a pattern. Patterns cannot be empty.
+     * Enter patterns to specify which status checks must pass before
+     * 								branches can be merged into a branch that matches this rule.
+     * 								Each line specifies a pattern. Patterns cannot be empty.
      */
-    statusCheckPatterns?: pulumi.Input<pulumi.Input<string>[]>;
+    statusCheckPatterns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unprotected file patterns (separated using semicolon ';')
      */
-    unprotectedFilePatterns?: pulumi.Input<string>;
+    unprotectedFilePatterns?: pulumi.Input<string | undefined>;
     /**
      * Webhook creation timestamp
      */
-    updatedAt?: pulumi.Input<string>;
+    updatedAt?: pulumi.Input<string | undefined>;
     /**
      * User name or organization name
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -347,86 +377,98 @@ export interface RepositoryBranchProtectionState {
  */
 export interface RepositoryBranchProtectionArgs {
     /**
-     * Only reviews from allowlisted teams will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted teams will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
-    approvalWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    approvalWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Only reviews from allowlisted users will count to the required approvals. Without approval allowlist, reviews from
-     * anyone with write access count to the required approvals.
+     * Only reviews from allowlisted users will count to the required
+     * 								approvals. Without approval allowlist, reviews from anyone with
+     * 								write access count to the required approvals.
      */
-    approvalWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    approvalWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Merging will not be possible when it has official review requests, even if there are enough approvals.
+     * Prevent admins from bypassing branch protection rules when merging.
      */
-    blockMergeOnOfficialReviewRequests?: pulumi.Input<boolean>;
+    blockAdminMergeOverride?: pulumi.Input<boolean | undefined>;
+    /**
+     * Merging will not be possible when it has official
+     * 								review requests, even if there are enough approvals.
+     */
+    blockMergeOnOfficialReviewRequests?: pulumi.Input<boolean | undefined>;
     /**
      * Merging will not be possible when head branch is behind base branch.
      */
-    blockMergeOnOutdatedBranch?: pulumi.Input<boolean>;
+    blockMergeOnOutdatedBranch?: pulumi.Input<boolean | undefined>;
     /**
-     * Merging will not be possible when changes are requested by official reviewers, even if there are enough approvals.
+     * Merging will not be possible when changes are
+     * 								requested by official reviewers, even if there are enough
+     * 								approvals.
      */
-    blockMergeOnRejectedReviews?: pulumi.Input<boolean>;
+    blockMergeOnRejectedReviews?: pulumi.Input<boolean | undefined>;
     /**
-     * When new commits that change the content of the pull request are pushed to the branch, old approvals will be dismissed.
+     * When new commits that change the content of the pull request
+     * 								are pushed to the branch, old approvals will be dismissed.
      */
-    dismissStaleApprovals?: pulumi.Input<boolean>;
+    dismissStaleApprovals?: pulumi.Input<boolean | undefined>;
     /**
-     * Anyone with write access will be allowed to push to this branch (but not force push), add a whitelist users or teams to
-     * limit access.
+     * Anyone with write access will be allowed to push to this branch
+     * 								(but not force push), add a whitelist users or teams to limit
+     * 								access.
      */
-    enablePush?: pulumi.Input<boolean>;
+    enablePush?: pulumi.Input<boolean | undefined>;
     /**
      * Allow only allowlisted teams to merge pull requests into this branch.
      */
-    mergeWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    mergeWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Allow only allowlisted users to merge pull requests into this branch.
      */
-    mergeWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    mergeWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Repository name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Protected file patterns (separated using semicolon ';')
      */
-    protectedFilePatterns?: pulumi.Input<string>;
+    protectedFilePatterns?: pulumi.Input<string | undefined>;
     /**
-     * Allow deploy keys with write access to push. Requires enable_push to be set to true.
+     * Allow deploy keys with write access to push. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistDeployKeys?: pulumi.Input<boolean>;
+    pushWhitelistDeployKeys?: pulumi.Input<boolean | undefined>;
     /**
-     * Allowlisted teams for pushing. Requires enable_push to be set to true.
+     * Allowlisted teams for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistTeams?: pulumi.Input<pulumi.Input<string>[]>;
+    pushWhitelistTeams?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Allowlisted users for pushing. Requires enable_push to be set to true.
+     * Allowlisted users for pushing. Requires<span pulumi-lang-nodejs=" enablePush " pulumi-lang-dotnet=" EnablePush " pulumi-lang-go=" enablePush " pulumi-lang-python=" enable_push " pulumi-lang-yaml=" enablePush " pulumi-lang-java=" enablePush " pulumi-lang-hcl=" enable_push "> enablePush </span>to be set to true.
      */
-    pushWhitelistUsers?: pulumi.Input<pulumi.Input<string>[]>;
-    repositoryBranchProtectionId?: pulumi.Input<string>;
+    pushWhitelistUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    repositoryBranchProtectionId?: pulumi.Input<string | undefined>;
     /**
      * Reject pushes to this branch if they are unsigned or unverifiable.
      */
-    requireSignedCommits?: pulumi.Input<boolean>;
+    requireSignedCommits?: pulumi.Input<boolean | undefined>;
     /**
      * Allow only to merge pull request with enough positive reviews.
      */
-    requiredApprovals?: pulumi.Input<number>;
+    requiredApprovals?: pulumi.Input<number | undefined>;
     /**
      * Protected Branch Name Pattern
      */
     ruleName: pulumi.Input<string>;
     /**
-     * Enter patterns to specify which status checks must pass before branches can be merged into a branch that matches this
-     * rule. Each line specifies a pattern. Patterns cannot be empty.
+     * Enter patterns to specify which status checks must pass before
+     * 								branches can be merged into a branch that matches this rule.
+     * 								Each line specifies a pattern. Patterns cannot be empty.
      */
-    statusCheckPatterns?: pulumi.Input<pulumi.Input<string>[]>;
+    statusCheckPatterns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unprotected file patterns (separated using semicolon ';')
      */
-    unprotectedFilePatterns?: pulumi.Input<string>;
+    unprotectedFilePatterns?: pulumi.Input<string | undefined>;
     /**
      * User name or organization name
      */

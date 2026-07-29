@@ -97,20 +97,20 @@ export interface RepositoryKeyState {
     /**
      * Armored SSH key to add
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Whether this key has read or read/write access
      */
-    readOnly?: pulumi.Input<boolean>;
+    readOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the repository where the deploy key belongs to
      */
-    repository?: pulumi.Input<number>;
-    repositoryKeyId?: pulumi.Input<string>;
+    repository?: pulumi.Input<number | undefined>;
+    repositoryKeyId?: pulumi.Input<string | undefined>;
     /**
      * Name of the deploy key
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -124,12 +124,12 @@ export interface RepositoryKeyArgs {
     /**
      * Whether this key has read or read/write access
      */
-    readOnly?: pulumi.Input<boolean>;
+    readOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the repository where the deploy key belongs to
      */
     repository: pulumi.Input<number>;
-    repositoryKeyId?: pulumi.Input<string>;
+    repositoryKeyId?: pulumi.Input<string | undefined>;
     /**
      * Name of the deploy key
      */

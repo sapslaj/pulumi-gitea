@@ -79,12 +79,12 @@ export interface GpgKeyState {
     /**
      * An armored GPG public key
      */
-    armoredPublicKey?: pulumi.Input<string>;
-    gpgKeyId?: pulumi.Input<string>;
+    armoredPublicKey?: pulumi.Input<string | undefined>;
+    gpgKeyId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the GPG key
      */
-    keyId?: pulumi.Input<string>;
+    keyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -95,5 +95,5 @@ export interface GpgKeyArgs {
      * An armored GPG public key
      */
     armoredPublicKey: pulumi.Input<string>;
-    gpgKeyId?: pulumi.Input<string>;
+    gpgKeyId?: pulumi.Input<string | undefined>;
 }

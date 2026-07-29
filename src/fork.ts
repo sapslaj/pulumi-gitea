@@ -85,30 +85,30 @@ export class Fork extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Fork resources.
  */
 export interface ForkState {
-    forkId?: pulumi.Input<string>;
+    forkId?: pulumi.Input<string | undefined>;
     /**
      * The organization that owns the forked repo
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * The owner or owning organization of the repository to fork
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The name of the repository to fork
      */
-    repo?: pulumi.Input<string>;
+    repo?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a Fork resource.
  */
 export interface ForkArgs {
-    forkId?: pulumi.Input<string>;
+    forkId?: pulumi.Input<string | undefined>;
     /**
      * The organization that owns the forked repo
      */
-    organization?: pulumi.Input<string>;
+    organization?: pulumi.Input<string | undefined>;
     /**
      * The owner or owning organization of the repository to fork
      */

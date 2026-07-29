@@ -99,24 +99,24 @@ export interface Oauth2AppState {
     /**
      * OAuth2 Application client id
      */
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
     /**
      * Oauth2 Application client secret
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * If set to false, it will be a public client (PKCE will be required)
      */
-    confidentialClient?: pulumi.Input<boolean>;
+    confidentialClient?: pulumi.Input<boolean | undefined>;
     /**
      * OAuth Application name
      */
-    name?: pulumi.Input<string>;
-    oauth2AppId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    oauth2AppId?: pulumi.Input<string | undefined>;
     /**
      * Accepted redirect URIs
      */
-    redirectUris?: pulumi.Input<pulumi.Input<string>[]>;
+    redirectUris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -126,12 +126,12 @@ export interface Oauth2AppArgs {
     /**
      * If set to false, it will be a public client (PKCE will be required)
      */
-    confidentialClient?: pulumi.Input<boolean>;
+    confidentialClient?: pulumi.Input<boolean | undefined>;
     /**
      * OAuth Application name
      */
-    name?: pulumi.Input<string>;
-    oauth2AppId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    oauth2AppId?: pulumi.Input<string | undefined>;
     /**
      * Accepted redirect URIs
      */

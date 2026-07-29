@@ -33,9 +33,9 @@ export class RepositoryWebhook extends pulumi.CustomResource {
     }
 
     /**
-     * Set webhook to active, e.g. `true`
+     * Set webhook to active, e.g. <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
      */
-    declare public readonly active: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean | undefined>;
     /**
      * Webhook authorization header
      */
@@ -43,19 +43,39 @@ export class RepositoryWebhook extends pulumi.CustomResource {
     /**
      * Set branch filter on the webhook, e.g. `"*"`
      */
-    declare public readonly branchFilter: pulumi.Output<string>;
+    declare public readonly branchFilter: pulumi.Output<string | undefined>;
     /**
-     * The content type of the payload. It can be `json`, or `form`
+     * Channel name for Slack webhooks (e.g. `#general` or `@username`)
      */
-    declare public readonly contentType: pulumi.Output<string>;
+    declare public readonly channel: pulumi.Output<string | undefined>;
+    /**
+     * Hex color code for Slack webhooks (e.g. `#ff0000`)
+     */
+    declare public readonly color: pulumi.Output<string | undefined>;
+    /**
+     * Additional key-value configuration options for webhooks
+     */
+    declare public readonly config: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * The content type of the payload. It can be <span pulumi-lang-nodejs="`json`" pulumi-lang-dotnet="`Json`" pulumi-lang-go="`json`" pulumi-lang-python="`json`" pulumi-lang-yaml="`json`" pulumi-lang-java="`json`" pulumi-lang-hcl="`json`">`json`</span>, or <span pulumi-lang-nodejs="`form`" pulumi-lang-dotnet="`Form`" pulumi-lang-go="`form`" pulumi-lang-python="`form`" pulumi-lang-yaml="`form`" pulumi-lang-java="`form`" pulumi-lang-hcl="`form`">`form`</span>
+     */
+    declare public readonly contentType: pulumi.Output<string | undefined>;
     /**
      * Webhook creation timestamp
      */
     declare public /*out*/ readonly createdAt: pulumi.Output<string>;
     /**
-     * A list of events that will trigger the webhool, e.g. `["push"]`
+     * A list of events that will trigger the webhook, e.g. `["push"]`
      */
     declare public readonly events: pulumi.Output<string[]>;
+    /**
+     * HTTP method used for the webhook
+     */
+    declare public readonly httpMethod: pulumi.Output<string | undefined>;
+    /**
+     * Icon URL for Slack or Discord webhooks
+     */
+    declare public readonly iconUrl: pulumi.Output<string | undefined>;
     /**
      * Repository name
      */
@@ -66,13 +86,17 @@ export class RepositoryWebhook extends pulumi.CustomResource {
      */
     declare public readonly secret: pulumi.Output<string | undefined>;
     /**
-     * Webhook type, e.g. `gitea`
+     * Bot username for Slack webhooks
+     */
+    declare public readonly slackUsername: pulumi.Output<string | undefined>;
+    /**
+     * Webhook type, e.g. <span pulumi-lang-nodejs="`gitea`" pulumi-lang-dotnet="`Gitea`" pulumi-lang-go="`gitea`" pulumi-lang-python="`gitea`" pulumi-lang-yaml="`gitea`" pulumi-lang-java="`gitea`" pulumi-lang-hcl="`gitea`">`gitea`</span>, <span pulumi-lang-nodejs="`gogs`" pulumi-lang-dotnet="`Gogs`" pulumi-lang-go="`gogs`" pulumi-lang-python="`gogs`" pulumi-lang-yaml="`gogs`" pulumi-lang-java="`gogs`" pulumi-lang-hcl="`gogs`">`gogs`</span>, <span pulumi-lang-nodejs="`slack`" pulumi-lang-dotnet="`Slack`" pulumi-lang-go="`slack`" pulumi-lang-python="`slack`" pulumi-lang-yaml="`slack`" pulumi-lang-java="`slack`" pulumi-lang-hcl="`slack`">`slack`</span>, <span pulumi-lang-nodejs="`discord`" pulumi-lang-dotnet="`Discord`" pulumi-lang-go="`discord`" pulumi-lang-python="`discord`" pulumi-lang-yaml="`discord`" pulumi-lang-java="`discord`" pulumi-lang-hcl="`discord`">`discord`</span>, <span pulumi-lang-nodejs="`dingtalk`" pulumi-lang-dotnet="`Dingtalk`" pulumi-lang-go="`dingtalk`" pulumi-lang-python="`dingtalk`" pulumi-lang-yaml="`dingtalk`" pulumi-lang-java="`dingtalk`" pulumi-lang-hcl="`dingtalk`">`dingtalk`</span>, <span pulumi-lang-nodejs="`msteams`" pulumi-lang-dotnet="`Msteams`" pulumi-lang-go="`msteams`" pulumi-lang-python="`msteams`" pulumi-lang-yaml="`msteams`" pulumi-lang-java="`msteams`" pulumi-lang-hcl="`msteams`">`msteams`</span>, <span pulumi-lang-nodejs="`telegram`" pulumi-lang-dotnet="`Telegram`" pulumi-lang-go="`telegram`" pulumi-lang-python="`telegram`" pulumi-lang-yaml="`telegram`" pulumi-lang-java="`telegram`" pulumi-lang-hcl="`telegram`">`telegram`</span>, <span pulumi-lang-nodejs="`feishu`" pulumi-lang-dotnet="`Feishu`" pulumi-lang-go="`feishu`" pulumi-lang-python="`feishu`" pulumi-lang-yaml="`feishu`" pulumi-lang-java="`feishu`" pulumi-lang-hcl="`feishu`">`feishu`</span>, <span pulumi-lang-nodejs="`matrix`" pulumi-lang-dotnet="`Matrix`" pulumi-lang-go="`matrix`" pulumi-lang-python="`matrix`" pulumi-lang-yaml="`matrix`" pulumi-lang-java="`matrix`" pulumi-lang-hcl="`matrix`">`matrix`</span>, <span pulumi-lang-nodejs="`wechatwork`" pulumi-lang-dotnet="`Wechatwork`" pulumi-lang-go="`wechatwork`" pulumi-lang-python="`wechatwork`" pulumi-lang-yaml="`wechatwork`" pulumi-lang-java="`wechatwork`" pulumi-lang-hcl="`wechatwork`">`wechatwork`</span>, <span pulumi-lang-nodejs="`packagist`" pulumi-lang-dotnet="`Packagist`" pulumi-lang-go="`packagist`" pulumi-lang-python="`packagist`" pulumi-lang-yaml="`packagist`" pulumi-lang-java="`packagist`" pulumi-lang-hcl="`packagist`">`packagist`</span>
      */
     declare public readonly type: pulumi.Output<string>;
     /**
      * Target URL of the webhook
      */
-    declare public readonly url: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string | undefined>;
     /**
      * User name or organization name
      */
@@ -94,52 +118,54 @@ export class RepositoryWebhook extends pulumi.CustomResource {
             resourceInputs["active"] = state?.active;
             resourceInputs["authorizationHeader"] = state?.authorizationHeader;
             resourceInputs["branchFilter"] = state?.branchFilter;
+            resourceInputs["channel"] = state?.channel;
+            resourceInputs["color"] = state?.color;
+            resourceInputs["config"] = state?.config;
             resourceInputs["contentType"] = state?.contentType;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["events"] = state?.events;
+            resourceInputs["httpMethod"] = state?.httpMethod;
+            resourceInputs["iconUrl"] = state?.iconUrl;
             resourceInputs["name"] = state?.name;
             resourceInputs["repositoryWebhookId"] = state?.repositoryWebhookId;
             resourceInputs["secret"] = state?.secret;
+            resourceInputs["slackUsername"] = state?.slackUsername;
             resourceInputs["type"] = state?.type;
             resourceInputs["url"] = state?.url;
             resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as RepositoryWebhookArgs | undefined;
-            if (args?.active === undefined && !opts.urn) {
-                throw new Error("Missing required property 'active'");
-            }
-            if (args?.branchFilter === undefined && !opts.urn) {
-                throw new Error("Missing required property 'branchFilter'");
-            }
-            if (args?.contentType === undefined && !opts.urn) {
-                throw new Error("Missing required property 'contentType'");
-            }
             if (args?.events === undefined && !opts.urn) {
                 throw new Error("Missing required property 'events'");
             }
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if (args?.url === undefined && !opts.urn) {
-                throw new Error("Missing required property 'url'");
-            }
             if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
             resourceInputs["active"] = args?.active;
-            resourceInputs["authorizationHeader"] = args?.authorizationHeader;
+            resourceInputs["authorizationHeader"] = args?.authorizationHeader ? pulumi.secret(args.authorizationHeader) : undefined;
             resourceInputs["branchFilter"] = args?.branchFilter;
+            resourceInputs["channel"] = args?.channel;
+            resourceInputs["color"] = args?.color;
+            resourceInputs["config"] = args?.config;
             resourceInputs["contentType"] = args?.contentType;
             resourceInputs["events"] = args?.events;
+            resourceInputs["httpMethod"] = args?.httpMethod;
+            resourceInputs["iconUrl"] = args?.iconUrl;
             resourceInputs["name"] = args?.name;
             resourceInputs["repositoryWebhookId"] = args?.repositoryWebhookId;
-            resourceInputs["secret"] = args?.secret;
+            resourceInputs["secret"] = args?.secret ? pulumi.secret(args.secret) : undefined;
+            resourceInputs["slackUsername"] = args?.slackUsername;
             resourceInputs["type"] = args?.type;
             resourceInputs["url"] = args?.url;
             resourceInputs["username"] = args?.username;
             resourceInputs["createdAt"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["authorizationHeader", "secret"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(RepositoryWebhook.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }
 }
@@ -149,50 +175,74 @@ export class RepositoryWebhook extends pulumi.CustomResource {
  */
 export interface RepositoryWebhookState {
     /**
-     * Set webhook to active, e.g. `true`
+     * Set webhook to active, e.g. <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Webhook authorization header
      */
-    authorizationHeader?: pulumi.Input<string>;
+    authorizationHeader?: pulumi.Input<string | undefined>;
     /**
      * Set branch filter on the webhook, e.g. `"*"`
      */
-    branchFilter?: pulumi.Input<string>;
+    branchFilter?: pulumi.Input<string | undefined>;
     /**
-     * The content type of the payload. It can be `json`, or `form`
+     * Channel name for Slack webhooks (e.g. `#general` or `@username`)
      */
-    contentType?: pulumi.Input<string>;
+    channel?: pulumi.Input<string | undefined>;
+    /**
+     * Hex color code for Slack webhooks (e.g. `#ff0000`)
+     */
+    color?: pulumi.Input<string | undefined>;
+    /**
+     * Additional key-value configuration options for webhooks
+     */
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The content type of the payload. It can be <span pulumi-lang-nodejs="`json`" pulumi-lang-dotnet="`Json`" pulumi-lang-go="`json`" pulumi-lang-python="`json`" pulumi-lang-yaml="`json`" pulumi-lang-java="`json`" pulumi-lang-hcl="`json`">`json`</span>, or <span pulumi-lang-nodejs="`form`" pulumi-lang-dotnet="`Form`" pulumi-lang-go="`form`" pulumi-lang-python="`form`" pulumi-lang-yaml="`form`" pulumi-lang-java="`form`" pulumi-lang-hcl="`form`">`form`</span>
+     */
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * Webhook creation timestamp
      */
-    createdAt?: pulumi.Input<string>;
+    createdAt?: pulumi.Input<string | undefined>;
     /**
-     * A list of events that will trigger the webhool, e.g. `["push"]`
+     * A list of events that will trigger the webhook, e.g. `["push"]`
      */
-    events?: pulumi.Input<pulumi.Input<string>[]>;
+    events?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * HTTP method used for the webhook
+     */
+    httpMethod?: pulumi.Input<string | undefined>;
+    /**
+     * Icon URL for Slack or Discord webhooks
+     */
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * Repository name
      */
-    name?: pulumi.Input<string>;
-    repositoryWebhookId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    repositoryWebhookId?: pulumi.Input<string | undefined>;
     /**
      * Webhook secret
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
     /**
-     * Webhook type, e.g. `gitea`
+     * Bot username for Slack webhooks
      */
-    type?: pulumi.Input<string>;
+    slackUsername?: pulumi.Input<string | undefined>;
+    /**
+     * Webhook type, e.g. <span pulumi-lang-nodejs="`gitea`" pulumi-lang-dotnet="`Gitea`" pulumi-lang-go="`gitea`" pulumi-lang-python="`gitea`" pulumi-lang-yaml="`gitea`" pulumi-lang-java="`gitea`" pulumi-lang-hcl="`gitea`">`gitea`</span>, <span pulumi-lang-nodejs="`gogs`" pulumi-lang-dotnet="`Gogs`" pulumi-lang-go="`gogs`" pulumi-lang-python="`gogs`" pulumi-lang-yaml="`gogs`" pulumi-lang-java="`gogs`" pulumi-lang-hcl="`gogs`">`gogs`</span>, <span pulumi-lang-nodejs="`slack`" pulumi-lang-dotnet="`Slack`" pulumi-lang-go="`slack`" pulumi-lang-python="`slack`" pulumi-lang-yaml="`slack`" pulumi-lang-java="`slack`" pulumi-lang-hcl="`slack`">`slack`</span>, <span pulumi-lang-nodejs="`discord`" pulumi-lang-dotnet="`Discord`" pulumi-lang-go="`discord`" pulumi-lang-python="`discord`" pulumi-lang-yaml="`discord`" pulumi-lang-java="`discord`" pulumi-lang-hcl="`discord`">`discord`</span>, <span pulumi-lang-nodejs="`dingtalk`" pulumi-lang-dotnet="`Dingtalk`" pulumi-lang-go="`dingtalk`" pulumi-lang-python="`dingtalk`" pulumi-lang-yaml="`dingtalk`" pulumi-lang-java="`dingtalk`" pulumi-lang-hcl="`dingtalk`">`dingtalk`</span>, <span pulumi-lang-nodejs="`msteams`" pulumi-lang-dotnet="`Msteams`" pulumi-lang-go="`msteams`" pulumi-lang-python="`msteams`" pulumi-lang-yaml="`msteams`" pulumi-lang-java="`msteams`" pulumi-lang-hcl="`msteams`">`msteams`</span>, <span pulumi-lang-nodejs="`telegram`" pulumi-lang-dotnet="`Telegram`" pulumi-lang-go="`telegram`" pulumi-lang-python="`telegram`" pulumi-lang-yaml="`telegram`" pulumi-lang-java="`telegram`" pulumi-lang-hcl="`telegram`">`telegram`</span>, <span pulumi-lang-nodejs="`feishu`" pulumi-lang-dotnet="`Feishu`" pulumi-lang-go="`feishu`" pulumi-lang-python="`feishu`" pulumi-lang-yaml="`feishu`" pulumi-lang-java="`feishu`" pulumi-lang-hcl="`feishu`">`feishu`</span>, <span pulumi-lang-nodejs="`matrix`" pulumi-lang-dotnet="`Matrix`" pulumi-lang-go="`matrix`" pulumi-lang-python="`matrix`" pulumi-lang-yaml="`matrix`" pulumi-lang-java="`matrix`" pulumi-lang-hcl="`matrix`">`matrix`</span>, <span pulumi-lang-nodejs="`wechatwork`" pulumi-lang-dotnet="`Wechatwork`" pulumi-lang-go="`wechatwork`" pulumi-lang-python="`wechatwork`" pulumi-lang-yaml="`wechatwork`" pulumi-lang-java="`wechatwork`" pulumi-lang-hcl="`wechatwork`">`wechatwork`</span>, <span pulumi-lang-nodejs="`packagist`" pulumi-lang-dotnet="`Packagist`" pulumi-lang-go="`packagist`" pulumi-lang-python="`packagist`" pulumi-lang-yaml="`packagist`" pulumi-lang-java="`packagist`" pulumi-lang-hcl="`packagist`">`packagist`</span>
+     */
+    type?: pulumi.Input<string | undefined>;
     /**
      * Target URL of the webhook
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * User name or organization name
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -200,42 +250,66 @@ export interface RepositoryWebhookState {
  */
 export interface RepositoryWebhookArgs {
     /**
-     * Set webhook to active, e.g. `true`
+     * Set webhook to active, e.g. <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
      */
-    active: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Webhook authorization header
      */
-    authorizationHeader?: pulumi.Input<string>;
+    authorizationHeader?: pulumi.Input<string | undefined>;
     /**
      * Set branch filter on the webhook, e.g. `"*"`
      */
-    branchFilter: pulumi.Input<string>;
+    branchFilter?: pulumi.Input<string | undefined>;
     /**
-     * The content type of the payload. It can be `json`, or `form`
+     * Channel name for Slack webhooks (e.g. `#general` or `@username`)
      */
-    contentType: pulumi.Input<string>;
+    channel?: pulumi.Input<string | undefined>;
     /**
-     * A list of events that will trigger the webhool, e.g. `["push"]`
+     * Hex color code for Slack webhooks (e.g. `#ff0000`)
+     */
+    color?: pulumi.Input<string | undefined>;
+    /**
+     * Additional key-value configuration options for webhooks
+     */
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The content type of the payload. It can be <span pulumi-lang-nodejs="`json`" pulumi-lang-dotnet="`Json`" pulumi-lang-go="`json`" pulumi-lang-python="`json`" pulumi-lang-yaml="`json`" pulumi-lang-java="`json`" pulumi-lang-hcl="`json`">`json`</span>, or <span pulumi-lang-nodejs="`form`" pulumi-lang-dotnet="`Form`" pulumi-lang-go="`form`" pulumi-lang-python="`form`" pulumi-lang-yaml="`form`" pulumi-lang-java="`form`" pulumi-lang-hcl="`form`">`form`</span>
+     */
+    contentType?: pulumi.Input<string | undefined>;
+    /**
+     * A list of events that will trigger the webhook, e.g. `["push"]`
      */
     events: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * HTTP method used for the webhook
+     */
+    httpMethod?: pulumi.Input<string | undefined>;
+    /**
+     * Icon URL for Slack or Discord webhooks
+     */
+    iconUrl?: pulumi.Input<string | undefined>;
+    /**
      * Repository name
      */
-    name?: pulumi.Input<string>;
-    repositoryWebhookId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    repositoryWebhookId?: pulumi.Input<string | undefined>;
     /**
      * Webhook secret
      */
-    secret?: pulumi.Input<string>;
+    secret?: pulumi.Input<string | undefined>;
     /**
-     * Webhook type, e.g. `gitea`
+     * Bot username for Slack webhooks
+     */
+    slackUsername?: pulumi.Input<string | undefined>;
+    /**
+     * Webhook type, e.g. <span pulumi-lang-nodejs="`gitea`" pulumi-lang-dotnet="`Gitea`" pulumi-lang-go="`gitea`" pulumi-lang-python="`gitea`" pulumi-lang-yaml="`gitea`" pulumi-lang-java="`gitea`" pulumi-lang-hcl="`gitea`">`gitea`</span>, <span pulumi-lang-nodejs="`gogs`" pulumi-lang-dotnet="`Gogs`" pulumi-lang-go="`gogs`" pulumi-lang-python="`gogs`" pulumi-lang-yaml="`gogs`" pulumi-lang-java="`gogs`" pulumi-lang-hcl="`gogs`">`gogs`</span>, <span pulumi-lang-nodejs="`slack`" pulumi-lang-dotnet="`Slack`" pulumi-lang-go="`slack`" pulumi-lang-python="`slack`" pulumi-lang-yaml="`slack`" pulumi-lang-java="`slack`" pulumi-lang-hcl="`slack`">`slack`</span>, <span pulumi-lang-nodejs="`discord`" pulumi-lang-dotnet="`Discord`" pulumi-lang-go="`discord`" pulumi-lang-python="`discord`" pulumi-lang-yaml="`discord`" pulumi-lang-java="`discord`" pulumi-lang-hcl="`discord`">`discord`</span>, <span pulumi-lang-nodejs="`dingtalk`" pulumi-lang-dotnet="`Dingtalk`" pulumi-lang-go="`dingtalk`" pulumi-lang-python="`dingtalk`" pulumi-lang-yaml="`dingtalk`" pulumi-lang-java="`dingtalk`" pulumi-lang-hcl="`dingtalk`">`dingtalk`</span>, <span pulumi-lang-nodejs="`msteams`" pulumi-lang-dotnet="`Msteams`" pulumi-lang-go="`msteams`" pulumi-lang-python="`msteams`" pulumi-lang-yaml="`msteams`" pulumi-lang-java="`msteams`" pulumi-lang-hcl="`msteams`">`msteams`</span>, <span pulumi-lang-nodejs="`telegram`" pulumi-lang-dotnet="`Telegram`" pulumi-lang-go="`telegram`" pulumi-lang-python="`telegram`" pulumi-lang-yaml="`telegram`" pulumi-lang-java="`telegram`" pulumi-lang-hcl="`telegram`">`telegram`</span>, <span pulumi-lang-nodejs="`feishu`" pulumi-lang-dotnet="`Feishu`" pulumi-lang-go="`feishu`" pulumi-lang-python="`feishu`" pulumi-lang-yaml="`feishu`" pulumi-lang-java="`feishu`" pulumi-lang-hcl="`feishu`">`feishu`</span>, <span pulumi-lang-nodejs="`matrix`" pulumi-lang-dotnet="`Matrix`" pulumi-lang-go="`matrix`" pulumi-lang-python="`matrix`" pulumi-lang-yaml="`matrix`" pulumi-lang-java="`matrix`" pulumi-lang-hcl="`matrix`">`matrix`</span>, <span pulumi-lang-nodejs="`wechatwork`" pulumi-lang-dotnet="`Wechatwork`" pulumi-lang-go="`wechatwork`" pulumi-lang-python="`wechatwork`" pulumi-lang-yaml="`wechatwork`" pulumi-lang-java="`wechatwork`" pulumi-lang-hcl="`wechatwork`">`wechatwork`</span>, <span pulumi-lang-nodejs="`packagist`" pulumi-lang-dotnet="`Packagist`" pulumi-lang-go="`packagist`" pulumi-lang-python="`packagist`" pulumi-lang-yaml="`packagist`" pulumi-lang-java="`packagist`" pulumi-lang-hcl="`packagist`">`packagist`</span>
      */
     type: pulumi.Input<string>;
     /**
      * Target URL of the webhook
      */
-    url: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * User name or organization name
      */

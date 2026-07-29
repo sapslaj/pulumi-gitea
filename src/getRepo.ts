@@ -29,6 +29,7 @@ export interface GetRepoResult {
     readonly cloneUrl: string;
     readonly created: string;
     readonly defaultBranch: string;
+    readonly defaultMergeStyle: string;
     readonly description: string;
     readonly fork: boolean;
     readonly forks: number;
@@ -63,7 +64,7 @@ export function getRepoOutput(args: GetRepoOutputArgs, opts?: pulumi.InvokeOutpu
  * A collection of arguments for invoking getRepo.
  */
 export interface GetRepoOutputArgs {
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     name: pulumi.Input<string>;
     username: pulumi.Input<string>;
 }

@@ -10,15 +10,130 @@ export type Fork = import("./fork").Fork;
 export const Fork: typeof import("./fork").Fork = null as any;
 utilities.lazyLoad(exports, ["Fork"], () => require("./fork"));
 
+export { GetActionsJobsArgs, GetActionsJobsResult, GetActionsJobsOutputArgs } from "./getActionsJobs";
+export const getActionsJobs: typeof import("./getActionsJobs").getActionsJobs = null as any;
+export const getActionsJobsOutput: typeof import("./getActionsJobs").getActionsJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getActionsJobs","getActionsJobsOutput"], () => require("./getActionsJobs"));
+
+export { GetActionsRunnerRegistrationTokenArgs, GetActionsRunnerRegistrationTokenResult, GetActionsRunnerRegistrationTokenOutputArgs } from "./getActionsRunnerRegistrationToken";
+export const getActionsRunnerRegistrationToken: typeof import("./getActionsRunnerRegistrationToken").getActionsRunnerRegistrationToken = null as any;
+export const getActionsRunnerRegistrationTokenOutput: typeof import("./getActionsRunnerRegistrationToken").getActionsRunnerRegistrationTokenOutput = null as any;
+utilities.lazyLoad(exports, ["getActionsRunnerRegistrationToken","getActionsRunnerRegistrationTokenOutput"], () => require("./getActionsRunnerRegistrationToken"));
+
+export { GetActionsRunnersArgs, GetActionsRunnersResult, GetActionsRunnersOutputArgs } from "./getActionsRunners";
+export const getActionsRunners: typeof import("./getActionsRunners").getActionsRunners = null as any;
+export const getActionsRunnersOutput: typeof import("./getActionsRunners").getActionsRunnersOutput = null as any;
+utilities.lazyLoad(exports, ["getActionsRunners","getActionsRunnersOutput"], () => require("./getActionsRunners"));
+
+export { GetActionsRunsArgs, GetActionsRunsResult, GetActionsRunsOutputArgs } from "./getActionsRuns";
+export const getActionsRuns: typeof import("./getActionsRuns").getActionsRuns = null as any;
+export const getActionsRunsOutput: typeof import("./getActionsRuns").getActionsRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getActionsRuns","getActionsRunsOutput"], () => require("./getActionsRuns"));
+
+export { GetIssueAttachmentsArgs, GetIssueAttachmentsResult, GetIssueAttachmentsOutputArgs } from "./getIssueAttachments";
+export const getIssueAttachments: typeof import("./getIssueAttachments").getIssueAttachments = null as any;
+export const getIssueAttachmentsOutput: typeof import("./getIssueAttachments").getIssueAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getIssueAttachments","getIssueAttachmentsOutput"], () => require("./getIssueAttachments"));
+
+export { GetIssueCommentAttachmentsArgs, GetIssueCommentAttachmentsResult, GetIssueCommentAttachmentsOutputArgs } from "./getIssueCommentAttachments";
+export const getIssueCommentAttachments: typeof import("./getIssueCommentAttachments").getIssueCommentAttachments = null as any;
+export const getIssueCommentAttachmentsOutput: typeof import("./getIssueCommentAttachments").getIssueCommentAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getIssueCommentAttachments","getIssueCommentAttachmentsOutput"], () => require("./getIssueCommentAttachments"));
+
 export { GetOrgArgs, GetOrgResult, GetOrgOutputArgs } from "./getOrg";
 export const getOrg: typeof import("./getOrg").getOrg = null as any;
 export const getOrgOutput: typeof import("./getOrg").getOrgOutput = null as any;
 utilities.lazyLoad(exports, ["getOrg","getOrgOutput"], () => require("./getOrg"));
 
+export { GetPackageVersionsArgs, GetPackageVersionsResult, GetPackageVersionsOutputArgs } from "./getPackageVersions";
+export const getPackageVersions: typeof import("./getPackageVersions").getPackageVersions = null as any;
+export const getPackageVersionsOutput: typeof import("./getPackageVersions").getPackageVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getPackageVersions","getPackageVersionsOutput"], () => require("./getPackageVersions"));
+
+export { GetPullRequestByBaseHeadArgs, GetPullRequestByBaseHeadResult, GetPullRequestByBaseHeadOutputArgs } from "./getPullRequestByBaseHead";
+export const getPullRequestByBaseHead: typeof import("./getPullRequestByBaseHead").getPullRequestByBaseHead = null as any;
+export const getPullRequestByBaseHeadOutput: typeof import("./getPullRequestByBaseHead").getPullRequestByBaseHeadOutput = null as any;
+utilities.lazyLoad(exports, ["getPullRequestByBaseHead","getPullRequestByBaseHeadOutput"], () => require("./getPullRequestByBaseHead"));
+
 export { GetRepoArgs, GetRepoResult, GetRepoOutputArgs } from "./getRepo";
 export const getRepo: typeof import("./getRepo").getRepo = null as any;
 export const getRepoOutput: typeof import("./getRepo").getRepoOutput = null as any;
 utilities.lazyLoad(exports, ["getRepo","getRepoOutput"], () => require("./getRepo"));
+
+export { GetRepositoriesArgs, GetRepositoriesResult, GetRepositoriesOutputArgs } from "./getRepositories";
+export const getRepositories: typeof import("./getRepositories").getRepositories = null as any;
+export const getRepositoriesOutput: typeof import("./getRepositories").getRepositoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositories","getRepositoriesOutput"], () => require("./getRepositories"));
+
+export { GetRepositoryActionsArtifactArgs, GetRepositoryActionsArtifactResult, GetRepositoryActionsArtifactOutputArgs } from "./getRepositoryActionsArtifact";
+export const getRepositoryActionsArtifact: typeof import("./getRepositoryActionsArtifact").getRepositoryActionsArtifact = null as any;
+export const getRepositoryActionsArtifactOutput: typeof import("./getRepositoryActionsArtifact").getRepositoryActionsArtifactOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryActionsArtifact","getRepositoryActionsArtifactOutput"], () => require("./getRepositoryActionsArtifact"));
+
+export { GetRepositoryActionsArtifactsArgs, GetRepositoryActionsArtifactsResult, GetRepositoryActionsArtifactsOutputArgs } from "./getRepositoryActionsArtifacts";
+export const getRepositoryActionsArtifacts: typeof import("./getRepositoryActionsArtifacts").getRepositoryActionsArtifacts = null as any;
+export const getRepositoryActionsArtifactsOutput: typeof import("./getRepositoryActionsArtifacts").getRepositoryActionsArtifactsOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryActionsArtifacts","getRepositoryActionsArtifactsOutput"], () => require("./getRepositoryActionsArtifacts"));
+
+export { GetRepositoryActionsWorkflowsArgs, GetRepositoryActionsWorkflowsResult, GetRepositoryActionsWorkflowsOutputArgs } from "./getRepositoryActionsWorkflows";
+export const getRepositoryActionsWorkflows: typeof import("./getRepositoryActionsWorkflows").getRepositoryActionsWorkflows = null as any;
+export const getRepositoryActionsWorkflowsOutput: typeof import("./getRepositoryActionsWorkflows").getRepositoryActionsWorkflowsOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryActionsWorkflows","getRepositoryActionsWorkflowsOutput"], () => require("./getRepositoryActionsWorkflows"));
+
+export { GetRepositoryFileArgs, GetRepositoryFileResult, GetRepositoryFileOutputArgs } from "./getRepositoryFile";
+export const getRepositoryFile: typeof import("./getRepositoryFile").getRepositoryFile = null as any;
+export const getRepositoryFileOutput: typeof import("./getRepositoryFile").getRepositoryFileOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryFile","getRepositoryFileOutput"], () => require("./getRepositoryFile"));
+
+export { GetRepositoryFilesArgs, GetRepositoryFilesResult, GetRepositoryFilesOutputArgs } from "./getRepositoryFiles";
+export const getRepositoryFiles: typeof import("./getRepositoryFiles").getRepositoryFiles = null as any;
+export const getRepositoryFilesOutput: typeof import("./getRepositoryFiles").getRepositoryFilesOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryFiles","getRepositoryFilesOutput"], () => require("./getRepositoryFiles"));
+
+export { GetRepositoryIssueConfigArgs, GetRepositoryIssueConfigResult, GetRepositoryIssueConfigOutputArgs } from "./getRepositoryIssueConfig";
+export const getRepositoryIssueConfig: typeof import("./getRepositoryIssueConfig").getRepositoryIssueConfig = null as any;
+export const getRepositoryIssueConfigOutput: typeof import("./getRepositoryIssueConfig").getRepositoryIssueConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryIssueConfig","getRepositoryIssueConfigOutput"], () => require("./getRepositoryIssueConfig"));
+
+export { GetRepositoryLicensesArgs, GetRepositoryLicensesResult, GetRepositoryLicensesOutputArgs } from "./getRepositoryLicenses";
+export const getRepositoryLicenses: typeof import("./getRepositoryLicenses").getRepositoryLicenses = null as any;
+export const getRepositoryLicensesOutput: typeof import("./getRepositoryLicenses").getRepositoryLicensesOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryLicenses","getRepositoryLicensesOutput"], () => require("./getRepositoryLicenses"));
+
+export { GetRepositorySigningKeyArgs, GetRepositorySigningKeyResult, GetRepositorySigningKeyOutputArgs } from "./getRepositorySigningKey";
+export const getRepositorySigningKey: typeof import("./getRepositorySigningKey").getRepositorySigningKey = null as any;
+export const getRepositorySigningKeyOutput: typeof import("./getRepositorySigningKey").getRepositorySigningKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositorySigningKey","getRepositorySigningKeyOutput"], () => require("./getRepositorySigningKey"));
+
+export { GetRepositorySubscribersArgs, GetRepositorySubscribersResult, GetRepositorySubscribersOutputArgs } from "./getRepositorySubscribers";
+export const getRepositorySubscribers: typeof import("./getRepositorySubscribers").getRepositorySubscribers = null as any;
+export const getRepositorySubscribersOutput: typeof import("./getRepositorySubscribers").getRepositorySubscribersOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositorySubscribers","getRepositorySubscribersOutput"], () => require("./getRepositorySubscribers"));
+
+export { GetRepositoryWebhookArgs, GetRepositoryWebhookResult, GetRepositoryWebhookOutputArgs } from "./getRepositoryWebhook";
+export const getRepositoryWebhook: typeof import("./getRepositoryWebhook").getRepositoryWebhook = null as any;
+export const getRepositoryWebhookOutput: typeof import("./getRepositoryWebhook").getRepositoryWebhookOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryWebhook","getRepositoryWebhookOutput"], () => require("./getRepositoryWebhook"));
+
+export { GetTeamArgs, GetTeamResult, GetTeamOutputArgs } from "./getTeam";
+export const getTeam: typeof import("./getTeam").getTeam = null as any;
+export const getTeamOutput: typeof import("./getTeam").getTeamOutput = null as any;
+utilities.lazyLoad(exports, ["getTeam","getTeamOutput"], () => require("./getTeam"));
+
+export { GetTeamMembersArgs, GetTeamMembersResult, GetTeamMembersOutputArgs } from "./getTeamMembers";
+export const getTeamMembers: typeof import("./getTeamMembers").getTeamMembers = null as any;
+export const getTeamMembersOutput: typeof import("./getTeamMembers").getTeamMembersOutput = null as any;
+utilities.lazyLoad(exports, ["getTeamMembers","getTeamMembersOutput"], () => require("./getTeamMembers"));
+
+export { GetTeamRepositoryArgs, GetTeamRepositoryResult, GetTeamRepositoryOutputArgs } from "./getTeamRepository";
+export const getTeamRepository: typeof import("./getTeamRepository").getTeamRepository = null as any;
+export const getTeamRepositoryOutput: typeof import("./getTeamRepository").getTeamRepositoryOutput = null as any;
+utilities.lazyLoad(exports, ["getTeamRepository","getTeamRepositoryOutput"], () => require("./getTeamRepository"));
+
+export { GetTeamsArgs, GetTeamsResult, GetTeamsOutputArgs } from "./getTeams";
+export const getTeams: typeof import("./getTeams").getTeams = null as any;
+export const getTeamsOutput: typeof import("./getTeams").getTeamsOutput = null as any;
+utilities.lazyLoad(exports, ["getTeams","getTeamsOutput"], () => require("./getTeams"));
 
 export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
 export const getUser: typeof import("./getUser").getUser = null as any;
@@ -35,6 +150,16 @@ export type GpgKey = import("./gpgKey").GpgKey;
 export const GpgKey: typeof import("./gpgKey").GpgKey = null as any;
 utilities.lazyLoad(exports, ["GpgKey"], () => require("./gpgKey"));
 
+export { IssueAttachmentArgs, IssueAttachmentState } from "./issueAttachment";
+export type IssueAttachment = import("./issueAttachment").IssueAttachment;
+export const IssueAttachment: typeof import("./issueAttachment").IssueAttachment = null as any;
+utilities.lazyLoad(exports, ["IssueAttachment"], () => require("./issueAttachment"));
+
+export { IssueCommentAttachmentArgs, IssueCommentAttachmentState } from "./issueCommentAttachment";
+export type IssueCommentAttachment = import("./issueCommentAttachment").IssueCommentAttachment;
+export const IssueCommentAttachment: typeof import("./issueCommentAttachment").IssueCommentAttachment = null as any;
+utilities.lazyLoad(exports, ["IssueCommentAttachment"], () => require("./issueCommentAttachment"));
+
 export { Oauth2AppArgs, Oauth2AppState } from "./oauth2App";
 export type Oauth2App = import("./oauth2App").Oauth2App;
 export const Oauth2App: typeof import("./oauth2App").Oauth2App = null as any;
@@ -44,6 +169,16 @@ export { OrgArgs, OrgState } from "./org";
 export type Org = import("./org").Org;
 export const Org: typeof import("./org").Org = null as any;
 utilities.lazyLoad(exports, ["Org"], () => require("./org"));
+
+export { OrgActionsSecretArgs, OrgActionsSecretState } from "./orgActionsSecret";
+export type OrgActionsSecret = import("./orgActionsSecret").OrgActionsSecret;
+export const OrgActionsSecret: typeof import("./orgActionsSecret").OrgActionsSecret = null as any;
+utilities.lazyLoad(exports, ["OrgActionsSecret"], () => require("./orgActionsSecret"));
+
+export { OrgActionsVariableArgs, OrgActionsVariableState } from "./orgActionsVariable";
+export type OrgActionsVariable = import("./orgActionsVariable").OrgActionsVariable;
+export const OrgActionsVariable: typeof import("./orgActionsVariable").OrgActionsVariable = null as any;
+utilities.lazyLoad(exports, ["OrgActionsVariable"], () => require("./orgActionsVariable"));
 
 export * from "./provider";
 import { Provider } from "./provider";
@@ -68,10 +203,30 @@ export type RepositoryActionsVariable = import("./repositoryActionsVariable").Re
 export const RepositoryActionsVariable: typeof import("./repositoryActionsVariable").RepositoryActionsVariable = null as any;
 utilities.lazyLoad(exports, ["RepositoryActionsVariable"], () => require("./repositoryActionsVariable"));
 
+export { RepositoryActionsWorkflowStateArgs, RepositoryActionsWorkflowStateState } from "./repositoryActionsWorkflowState";
+export type RepositoryActionsWorkflowState = import("./repositoryActionsWorkflowState").RepositoryActionsWorkflowState;
+export const RepositoryActionsWorkflowState: typeof import("./repositoryActionsWorkflowState").RepositoryActionsWorkflowState = null as any;
+utilities.lazyLoad(exports, ["RepositoryActionsWorkflowState"], () => require("./repositoryActionsWorkflowState"));
+
+export { RepositoryBranchArgs, RepositoryBranchState } from "./repositoryBranch";
+export type RepositoryBranch = import("./repositoryBranch").RepositoryBranch;
+export const RepositoryBranch: typeof import("./repositoryBranch").RepositoryBranch = null as any;
+utilities.lazyLoad(exports, ["RepositoryBranch"], () => require("./repositoryBranch"));
+
 export { RepositoryBranchProtectionArgs, RepositoryBranchProtectionState } from "./repositoryBranchProtection";
 export type RepositoryBranchProtection = import("./repositoryBranchProtection").RepositoryBranchProtection;
 export const RepositoryBranchProtection: typeof import("./repositoryBranchProtection").RepositoryBranchProtection = null as any;
 utilities.lazyLoad(exports, ["RepositoryBranchProtection"], () => require("./repositoryBranchProtection"));
+
+export { RepositoryCollaboratorArgs, RepositoryCollaboratorState } from "./repositoryCollaborator";
+export type RepositoryCollaborator = import("./repositoryCollaborator").RepositoryCollaborator;
+export const RepositoryCollaborator: typeof import("./repositoryCollaborator").RepositoryCollaborator = null as any;
+utilities.lazyLoad(exports, ["RepositoryCollaborator"], () => require("./repositoryCollaborator"));
+
+export { RepositoryFileArgs, RepositoryFileState } from "./repositoryFile";
+export type RepositoryFile = import("./repositoryFile").RepositoryFile;
+export const RepositoryFile: typeof import("./repositoryFile").RepositoryFile = null as any;
+utilities.lazyLoad(exports, ["RepositoryFile"], () => require("./repositoryFile"));
 
 export { RepositoryKeyArgs, RepositoryKeyState } from "./repositoryKey";
 export type RepositoryKey = import("./repositoryKey").RepositoryKey;
@@ -108,12 +263,24 @@ export type User = import("./user").User;
 export const User: typeof import("./user").User = null as any;
 utilities.lazyLoad(exports, ["User"], () => require("./user"));
 
+export { UserActionsSecretArgs, UserActionsSecretState } from "./userActionsSecret";
+export type UserActionsSecret = import("./userActionsSecret").UserActionsSecret;
+export const UserActionsSecret: typeof import("./userActionsSecret").UserActionsSecret = null as any;
+utilities.lazyLoad(exports, ["UserActionsSecret"], () => require("./userActionsSecret"));
+
+export { UserActionsVariableArgs, UserActionsVariableState } from "./userActionsVariable";
+export type UserActionsVariable = import("./userActionsVariable").UserActionsVariable;
+export const UserActionsVariable: typeof import("./userActionsVariable").UserActionsVariable = null as any;
+utilities.lazyLoad(exports, ["UserActionsVariable"], () => require("./userActionsVariable"));
+
 
 // Export sub-modules:
 import * as config from "./config";
+import * as types from "./types";
 
 export {
     config,
+    types,
 };
 
 const _module = {
@@ -126,10 +293,18 @@ const _module = {
                 return new GitHook(name, <any>undefined, { urn })
             case "gitea:index/gpgKey:GpgKey":
                 return new GpgKey(name, <any>undefined, { urn })
+            case "gitea:index/issueAttachment:IssueAttachment":
+                return new IssueAttachment(name, <any>undefined, { urn })
+            case "gitea:index/issueCommentAttachment:IssueCommentAttachment":
+                return new IssueCommentAttachment(name, <any>undefined, { urn })
             case "gitea:index/oauth2App:Oauth2App":
                 return new Oauth2App(name, <any>undefined, { urn })
             case "gitea:index/org:Org":
                 return new Org(name, <any>undefined, { urn })
+            case "gitea:index/orgActionsSecret:OrgActionsSecret":
+                return new OrgActionsSecret(name, <any>undefined, { urn })
+            case "gitea:index/orgActionsVariable:OrgActionsVariable":
+                return new OrgActionsVariable(name, <any>undefined, { urn })
             case "gitea:index/publicKey:PublicKey":
                 return new PublicKey(name, <any>undefined, { urn })
             case "gitea:index/repository:Repository":
@@ -138,8 +313,16 @@ const _module = {
                 return new RepositoryActionsSecret(name, <any>undefined, { urn })
             case "gitea:index/repositoryActionsVariable:RepositoryActionsVariable":
                 return new RepositoryActionsVariable(name, <any>undefined, { urn })
+            case "gitea:index/repositoryActionsWorkflowState:RepositoryActionsWorkflowState":
+                return new RepositoryActionsWorkflowState(name, <any>undefined, { urn })
+            case "gitea:index/repositoryBranch:RepositoryBranch":
+                return new RepositoryBranch(name, <any>undefined, { urn })
             case "gitea:index/repositoryBranchProtection:RepositoryBranchProtection":
                 return new RepositoryBranchProtection(name, <any>undefined, { urn })
+            case "gitea:index/repositoryCollaborator:RepositoryCollaborator":
+                return new RepositoryCollaborator(name, <any>undefined, { urn })
+            case "gitea:index/repositoryFile:RepositoryFile":
+                return new RepositoryFile(name, <any>undefined, { urn })
             case "gitea:index/repositoryKey:RepositoryKey":
                 return new RepositoryKey(name, <any>undefined, { urn })
             case "gitea:index/repositoryWebhook:RepositoryWebhook":
@@ -154,6 +337,10 @@ const _module = {
                 return new Token(name, <any>undefined, { urn })
             case "gitea:index/user:User":
                 return new User(name, <any>undefined, { urn })
+            case "gitea:index/userActionsSecret:UserActionsSecret":
+                return new UserActionsSecret(name, <any>undefined, { urn })
+            case "gitea:index/userActionsVariable:UserActionsVariable":
+                return new UserActionsVariable(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -162,13 +349,21 @@ const _module = {
 pulumi.runtime.registerResourceModule("gitea", "index/fork", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/gitHook", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/gpgKey", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/issueAttachment", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/issueCommentAttachment", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/oauth2App", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/org", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/orgActionsSecret", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/orgActionsVariable", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/publicKey", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repository", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repositoryActionsSecret", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repositoryActionsVariable", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/repositoryActionsWorkflowState", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/repositoryBranch", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repositoryBranchProtection", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/repositoryCollaborator", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/repositoryFile", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repositoryKey", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/repositoryWebhook", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/team", _module)
@@ -176,6 +371,8 @@ pulumi.runtime.registerResourceModule("gitea", "index/teamMembers", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/teamMembership", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/token", _module)
 pulumi.runtime.registerResourceModule("gitea", "index/user", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/userActionsSecret", _module)
+pulumi.runtime.registerResourceModule("gitea", "index/userActionsVariable", _module)
 pulumi.runtime.registerResourcePackage("gitea", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {
